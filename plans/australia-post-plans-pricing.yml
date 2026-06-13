@@ -1,0 +1,126 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Australia Post
+providerId: australia-post
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Logistics / Shipping
+  - Postal
+  - E-Commerce
+description: Australia Post API access is divided by audience. The Postage Assessment
+  Calculator and Locations APIs are free to register and use with no postage charges
+  — they return public rate and location data only. The Shipping and Tracking API
+  and Delivery Choices API are gated behind an active eParcel or StarTrack parcel
+  contract; production shipment costs are billed at contracted postage rates through
+  Australia Post account invoicing, not via the API itself. The Delivery Partner API
+  requires an authorised delivery network partner agreement. No tiered SaaS subscription
+  pricing is publicly published; commercial terms for contract APIs are negotiated
+  with an account manager on a case-by-case basis.
+sources:
+  - https://auspost.com.au/developers/help-support/
+  - https://auspost.com.au/integrate-shipping-and-tracking-apis
+  - https://developers.auspost.com.au/apis/pac/
+plans:
+  - id: australia-post-free-pac
+    name: Postage Assessment Calculator — Free
+    type: free
+    description: Free self-serve API key for the Postage Assessment Calculator. Returns
+      standard retail postage rates for domestic and international parcels and letters.
+      No contract required; key issued immediately after completing the online registration
+      form. Does not provide contract or business rates.
+    entries:
+      - label: API key registration
+        name: pac_registration
+        type: free
+        metric: account
+        limit: -1
+        timeFrame: month
+        geo: AU
+        unit: 1
+        price: 0
+        userMultiplied: false
+    elements:
+      - name: Domestic parcel and letter postage rates
+      - name: International parcel and letter postage rates
+      - name: JSON and XML response formats
+      - name: AUTH-KEY header authentication
+      - name: API Explorer (interactive sandbox)
+  - id: australia-post-free-locations
+    name: Locations API — Free
+    type: free
+    description: Free API for looking up Australia Post outlet details, parcel lockers,
+      and parcel collect points by postcode or GPS coordinates. Self-serve key via
+      Developer Portal. No contract required.
+    entries:
+      - label: Locations API access
+        name: locations_access
+        type: free
+        metric: account
+        limit: -1
+        timeFrame: month
+        geo: AU
+        unit: 1
+        price: 0
+        userMultiplied: false
+    elements:
+      - name: Post office location lookup by postcode
+      - name: GPS-based outlet search
+      - name: Parcel locker and Parcel Collect points
+      - name: OpenAPI definition available
+      - name: Swagger client code generation
+  - id: australia-post-eparcel-contract
+    name: eParcel / StarTrack Contract
+    type: enterprise
+    description: Required for Shipping and Tracking API and Delivery Choices API access.
+      Organisations must hold a current eParcel or StarTrack parcels contract with
+      Australia Post. Once eligible, a test-bed sandbox environment and production
+      credentials are provided. Postage charges are billed at contracted rates through
+      Australia Post invoicing; API access itself incurs no additional fee. Contact
+      an Australia Post account manager to discuss eligibility and commercial terms.
+    entries:
+      - label: Contracted postage rate
+        name: eparcel_postage
+        type: metered
+        metric: shipment
+        limit: -1
+        timeFrame: usage
+        geo: AU
+        unit: 1
+        price: custom
+        userMultiplied: false
+    elements:
+      - name: Shipping and Tracking API access
+      - name: Label creation and printing
+      - name: Dangerous goods form generation
+      - name: Order manifest / despatch
+      - name: Parcel tracking (domestic and international)
+      - name: Return label creation
+      - name: Delivery Choices API (if volume minimums met)
+      - name: Sandbox test-bed environment
+      - name: Account manager support
+  - id: australia-post-delivery-partner
+    name: Delivery Partner Agreement
+    type: enterprise
+    description: Required for access to the Delivery Partner API, which allows authorised
+      logistics partners to report delivery events into Australia Post systems. Access
+      and commercial terms are governed by a separate delivery partner agreement with
+      Australia Post. Contact Australia Post to discuss partnership eligibility.
+    entries:
+      - label: Partner agreement
+        name: partner_agreement
+        type: subscription
+        metric: contract
+        limit: -1
+        timeFrame: month
+        geo: AU
+        unit: 1
+        price: custom
+        userMultiplied: false
+    elements:
+      - name: Delivery event reporting endpoint
+      - name: Near real-time scan event ingestion
+      - name: OpenAPI definition and Swagger code generation
+      - name: API version management (1.0.0, 1.2.0, 1.3.0)

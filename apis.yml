@@ -1,0 +1,180 @@
+aid: australia-post
+name: Australia Post
+description: Australia Post is Australia's primary postal operator, offering a developer
+  platform with REST APIs for e-commerce merchants, logistics providers, and delivery
+  partners. APIs cover shipping label creation, parcel tracking, postage calculation,
+  parcel locker and post office location lookup, delivery choice and scheduling, and
+  delivery partner event reporting for an integrated end-to-end fulfilment ecosystem.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2026-06-13'
+modified: '2026-06-13'
+position: Consumer
+tags:
+  - Address Validation
+  - Click and Collect
+  - Delivery
+  - E-Commerce
+  - Labels
+  - Locations
+  - Logistics
+  - Parcel Locker
+  - Postal
+  - Postage
+  - Shipping
+  - Tracking
+url: https://raw.githubusercontent.com/api-evangelist/australia-post/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: australia-post:shipping-and-tracking
+    name: Australia Post Shipping and Tracking API
+    description: Enables eParcel and StarTrack contract customers to lodge orders,
+      create and print shipping labels (including dangerous goods forms), generate
+      order summaries, despatch parcels, estimate prices and international landed
+      costs, and track parcel progress from source to destination through a single
+      REST integration. Requires an active Australia Post or StarTrack billing account
+      number; a sandbox test-bed environment is provided before going live.
+    humanURL: https://auspost.com.au/integrate-shipping-and-tracking-apis
+    baseURL: https://digitalapi.auspost.com.au
+    tags:
+      - Shipping
+      - Labels
+      - Tracking
+      - Logistics
+      - E-Commerce
+    properties:
+      - type: Documentation
+        url: https://auspost.com.au/integrate-shipping-and-tracking-apis
+      - type: GettingStarted
+        url: https://auspost.com.au/developers/help-support/how-to-get-credentials/
+      - type: APIReference
+        url: https://developers.auspost.com.au/apis/shipping-and-tracking/reference
+  - aid: australia-post:postage-assessment-calculator
+    name: Australia Post Postage Assessment Calculator API
+    description: Lets businesses and developers embed a postage calculator into websites
+      or applications to retrieve standard retail postage rates for domestic and international
+      parcels and letters. Accepts weight, dimensions, origin, and destination to
+      return eligible services with pricing. Uses HTTP GET requests returning JSON
+      or XML; authentication via AUTH-KEY header. Free API key available via self-serve
+      registration. Note — this API returns retail rates only; contract rates require
+      the Shipping and Tracking API.
+    humanURL: https://developers.auspost.com.au/apis/pac/
+    baseURL: https://digitalapi.auspost.com.au
+    tags:
+      - Postage
+      - Pricing
+      - E-Commerce
+      - Rating
+    properties:
+      - type: Documentation
+        url: https://developers.auspost.com.au/apis/pac/
+      - type: APIReference
+        url: https://developers.auspost.com.au/apis/pac/reference
+      - type: GettingStarted
+        url: https://developers.auspost.com.au/apis/pacpcs-registration
+      - type: APIExplorer
+        url: https://developers.auspost.com.au/apis/pac/explorer
+  - aid: australia-post:locations
+    name: Australia Post Locations API
+    description: Returns Australia Post outlet and facility information based on postcode
+      or GPS coordinates, enabling applications to surface nearby post offices, parcel
+      lockers, and parcel collect points to customers at checkout or on a store-finder
+      map. Current version is 2.3.0. Available at no cost; API key obtained via the
+      Developer Portal.
+    humanURL: https://auspost.com.au/developers/openapi/partner/locations/overview/
+    baseURL: https://digitalapi.auspost.com.au/locations/v2
+    tags:
+      - Locations
+      - Post Office
+      - Parcel Locker
+      - Click and Collect
+    properties:
+      - type: Documentation
+        url: https://auspost.com.au/developers/openapi/partner/locations/overview/
+      - type: OpenAPI
+        url: https://auspost.com.au/developers/openapi/partner/locations/overview/
+  - aid: australia-post:delivery-choices
+    name: Australia Post Delivery Choices API
+    description: Allows customers to select preferred delivery options at checkout,
+      including delivery speed, delivery or collection location, and specific day,
+      date, and time of delivery. Supports parcel locker delivery, authority to leave,
+      nominated safe place, and click-and-collect at Australia Post outlets. Access
+      requires meeting eParcel contract minimum volumes.
+    humanURL: https://developers.auspost.com.au/apis/dce/
+    baseURL: https://digitalapi.auspost.com.au
+    tags:
+      - Delivery
+      - Click and Collect
+      - Parcel Locker
+      - E-Commerce
+      - Checkout
+    properties:
+      - type: Documentation
+        url: https://developers.auspost.com.au/apis/dce/
+  - aid: australia-post:delivery-partner
+    name: Australia Post Delivery Partner API
+    description: Enables authorised Australia Post delivery network partners to report
+      delivery events back to Australia Post systems in near real-time. Partners push
+      scan events and delivery outcomes via POST requests to a single endpoint; the
+      data feeds Australia Post's consumer tracking and operational reporting. Current
+      version is 1.3.0; OpenAPI definition available for client code generation.
+    humanURL: https://auspost.com.au/developers/openapi/partner/delivery-partner/1.3.0/overview/
+    baseURL: https://digitalapi.auspost.com.au/delivery-partner
+    tags:
+      - Delivery
+      - Logistics
+      - Tracking
+      - Partners
+    properties:
+      - type: Documentation
+        url: https://auspost.com.au/developers/openapi/partner/delivery-partner/1.3.0/overview/
+      - type: OpenAPI
+        url: https://auspost.com.au/developers/openapi/partner/delivery-partner/1.3.0/overview/
+common:
+  - type: Website
+    url: https://auspost.com.au/
+  - type: DeveloperPortal
+    url: https://auspost.com.au/developers/
+  - type: DeveloperPortal
+    url: https://developers.auspost.com.au/
+  - type: Documentation
+    url: https://auspost.com.au/developers/help-support/about-our-apis/
+  - type: GettingStarted
+    url: https://auspost.com.au/developers/help-support/how-to-get-credentials/
+  - type: Catalog
+    url: https://auspost.com.au/developers/api-documentations/
+  - type: SignUp
+    url: https://developers.auspost.com.au/apis/pacpcs-registration
+  - type: Login
+    url: https://developers.auspost.com.au/
+  - type: StatusPage
+    url: https://status.developers.auspost.com.au/
+  - type: TermsOfService
+    url: https://auspost.com.au/developers/help-support/
+  - type: Contact
+    url: mailto:customer_connectivity@auspost.com.au
+  - type: IntegratePage
+    url: https://auspost.com.au/integrate-shipping-and-tracking-apis
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/australia-post
+  - type: Features
+    data:
+      - RESTful APIs using JSON payloads; GET, POST, PUT, PATCH, and DELETE methods supported
+      - Authentication via API Key (AUTH-KEY header), Basic Auth, OAuth 2.0 Client Credentials, or OAuth 2.0 Authorization Code
+      - Base URL for all production APIs is https://digitalapi.auspost.com.au
+      - Sandbox (test-bed) environment available for Shipping and Tracking API; requires account credentials
+      - Locations API and Postage Assessment Calculator API keys obtainable via self-serve registration; no contract required
+      - Shipping and Tracking API and Delivery Choices API require an active eParcel or StarTrack parcels contract
+      - Delivery Partner API requires authorised delivery network partner status
+      - Rate limits enforced per second, minute, hour, and day; HTTP 429 returned on breach
+      - Rate-limit status surfaced via X-RateLimit-Limit-* and X-RateLimit-Remaining-* response headers
+      - OpenAPI definitions available for Locations and Delivery Partner APIs; Swagger code generation supported
+      - API status monitoring at status.developers.auspost.com.au
+    sources:
+      - https://auspost.com.au/developers/help-support/about-our-apis/
+      - https://auspost.com.au/developers/help-support/
+    updated: '2026-06-13'
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

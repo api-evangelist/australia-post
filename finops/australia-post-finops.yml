@@ -1,0 +1,107 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Australia Post
+providerId: australia-post
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - FinOps
+  - Cost Management
+  - FOCUS
+  - Postal
+  - Logistics / Shipping
+description: FOCUS-aligned FinOps for Australia Post APIs. Free APIs (Postage Assessment
+  Calculator, Locations) carry no API-level cost. Contract APIs (Shipping and Tracking,
+  Delivery Choices) tie API usage directly to Australia Post postage spend — each
+  shipment lodged via the API generates a charge at the contracted eParcel or StarTrack
+  rate, billed through the customer's Australia Post account. Delivery Partner API
+  cost is governed by the partner agreement. Total API-driven spend is therefore dominated
+  by volume of shipments created, service class selected, weight, dimensions, and
+  destination.
+sources:
+  - https://auspost.com.au/integrate-shipping-and-tracking-apis
+  - https://auspost.com.au/developers/help-support/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Australia Post
+serviceCategory: Logistics / Shipping
+billingModel:
+  pricingCategory: Postage Metered + Free Tier
+  billingFrequency: Account Invoice (typically monthly)
+  billingCurrency: AUD
+  chargeCategories:
+    - Usage
+    - Adjustment
+    - Credit
+focusColumns:
+  ServiceName: Australia Post API
+  ServiceCategory: Logistics / Shipping
+  ProviderName: Australia Post
+  PublisherName: Australia Post
+  InvoiceIssuerName: Australia Post Group Pty Ltd
+  BillingCurrency: AUD
+meters:
+  - name: shipments_created
+    unit: shipment
+    aggregation: sum
+    dimensions:
+      - service_class
+      - destination_zone
+      - weight_band
+      - dangerous_goods
+    apis:
+      - australia-post:shipping-and-tracking
+  - name: labels_printed
+    unit: label
+    aggregation: sum
+    dimensions:
+      - label_format
+    apis:
+      - australia-post:shipping-and-tracking
+  - name: return_labels_created
+    unit: label
+    aggregation: sum
+    apis:
+      - australia-post:shipping-and-tracking
+  - name: postage_rate_lookups
+    unit: request
+    aggregation: sum
+    apis:
+      - australia-post:postage-assessment-calculator
+    cost: 0
+  - name: location_lookups
+    unit: request
+    aggregation: sum
+    apis:
+      - australia-post:locations
+    cost: 0
+  - name: delivery_events_reported
+    unit: event
+    aggregation: sum
+    apis:
+      - australia-post:delivery-partner
+principles:
+  - name: Visibility
+    description: Map each API call to Australia Post account billing line items by
+      correlating shipment IDs returned by the Shipping and Tracking API with charges
+      on the monthly eParcel/StarTrack account statement.
+  - name: Allocation
+    description: Tag shipments with order reference, business unit, or cost-centre
+      metadata in API request payloads to enable chargeback and showback reporting
+      at the shipment level.
+  - name: Optimization
+    description: Analyse service-class mix — compare Express Post vs Standard parcels
+      vs StarTrack — to identify opportunities to shift lower-urgency shipments to
+      cheaper services. Use the Postage Assessment Calculator API (free) in pre-checkout
+      flows to show customers real-time rates without incurring production shipment costs.
+  - name: Accountability
+    description: Reconcile monthly Australia Post invoices against shipment counts
+      from the Shipping and Tracking API. Investigate variance between lodged and
+      billed shipments; check for voided labels or manifesting errors. Track dangerous
+      goods surcharges separately.

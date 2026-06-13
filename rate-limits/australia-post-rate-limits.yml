@@ -1,0 +1,73 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Australia Post
+providerId: australia-post
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Rate Limiting
+  - Logistics / Shipping
+  - Postal
+description: Australia Post rate-limits all API endpoints to maintain fair and consistent
+  service across all developers. Limits are applied per credential and can be set
+  on any combination of requests per second, minute, hour, or day depending on the
+  individual API. Specific numeric thresholds are not published publicly and vary
+  per API; exceeding any limit returns HTTP 429. Current consumption is surfaced in
+  standard X-RateLimit-* response headers so clients can implement adaptive back-off.
+sources:
+  - https://auspost.com.au/developers/help-support/about-our-apis/
+  - https://auspost.com.au/developers/help-support/
+headers:
+  limitSecond: X-RateLimit-Limit-second
+  limitMinute: X-RateLimit-Limit-minute
+  limitHour: X-RateLimit-Limit-hour
+  limitDay: X-RateLimit-Limit-day
+  remainingHour: X-RateLimit-Remaining-hour
+responseCodes:
+  throttled: 429
+limits:
+  - name: Requests per second
+    scope: credential
+    metric: requests_per_second
+    limit: -1
+    timeFrame: second
+    notes: Limit value varies per API; not publicly disclosed. Check X-RateLimit-Limit-second header.
+  - name: Requests per minute
+    scope: credential
+    metric: requests_per_minute
+    limit: -1
+    timeFrame: minute
+    notes: Limit value varies per API; not publicly disclosed. Check X-RateLimit-Limit-minute header.
+  - name: Requests per hour
+    scope: credential
+    metric: requests_per_hour
+    limit: -1
+    timeFrame: hour
+    notes: Limit value varies per API; not publicly disclosed. Check X-RateLimit-Limit-hour header.
+  - name: Requests per day
+    scope: credential
+    metric: requests_per_day
+    limit: -1
+    timeFrame: day
+    notes: Limit value varies per API; not publicly disclosed. Check X-RateLimit-Limit-day header.
+policies:
+  - name: Per-credential throttling
+    description: Rate limits are applied to the credentials (API key or OAuth token) used
+      to make requests, not the developer account as a whole. Each app and its credentials
+      have independent quotas.
+  - name: HTTP 429 on breach
+    description: When any rate limit is exceeded all subsequent requests using that credential
+      return HTTP 429 Too Many Requests until the limit window resets.
+  - name: Adaptive back-off recommended
+    description: Clients should monitor X-RateLimit-Remaining-* headers and implement
+      exponential back-off when approaching or hitting limits.
+  - name: Per-API limits
+    description: Each Australia Post API (PAC, Locations, Shipping and Tracking, Delivery
+      Choices, Delivery Partner) may have different rate limit windows and thresholds.
+      Consult the individual API documentation for the applicable limits.
+  - name: Contact for quota increases
+    description: If existing limits are insufficient for production workloads, contact
+      Australia Post via customer_connectivity@auspost.com.au or speak with your account
+      manager to request higher quotas.
