@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DeliveryVO",
+  "description": "Delivery details.",
+  "type": "object",
+  "properties": {
+    "destination_postcode": {
+      "maxLength": 4,
+      "minLength": 4,
+      "pattern": "^\\d{4}$",
+      "type": "string",
+      "description": "The 4-digit Australian Postcode to where the article has been sent",
+      "example": "3204"
+    },
+    "proof_of_delivery": {
+      "$ref": "#/components/schemas/ProofOfDeliveryVO"
+    }
+  }
+}

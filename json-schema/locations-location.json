@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Location",
+  "description": "This object describes the precise location of an Australia Post outlet or facility. This object always returns latitude and longitude values for a point, although requests to the getPointsByGeoCoordinates endpoint will also include a distance value.",
+  "properties": {
+    "lat": {
+      "type": "number",
+      "description": "The global positioning latitude coordinate for a location. For example, 144.9696466.",
+      "format": "double"
+    },
+    "lon": {
+      "type": "number",
+      "description": "The global positioning longitude coordinate for a location. For example, -37.8126618.",
+      "format": "double"
+    },
+    "distance": {
+      "type": "number",
+      "description": "The distance in kilometres to a matching point from the coordinates provided in the endpoint request. **Note:** This field is displayed in the results for all endpoints that require you to provide longitude and latitude coordinates.",
+      "format": "double"
+    }
+  }
+}

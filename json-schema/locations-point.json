@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Point",
+  "description": "A point object is a descriptive record of an individual Australia Post outlet or facility, that includes location, contact and service availability data.",
+  "type": "object",
+  "properties": {
+    "address": {
+      "description": "An object that contains full street address information for a specific Australia Post outlet or facility.",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Address"
+        }
+      ]
+    },
+    "secondary_addresses": {
+      "description": "An object that contains full street address information for a specific Australia Post outlet or facility.",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Address"
+        }
+      ]
+    },
+    "delivery_point_id": {
+      "type": "integer",
+      "description": "A unique numeric identification code that represents a point to which Australia Post delivers or receives deliveries.",
+      "format": "int32"
+    },
+    "usage_type": {
+      "type": "string",
+      "description": "The usage_type field specifies the access level for a location point.\nFor parcel lockers (type=UPL):\n* \"1\": Accessible to both registered and unregistered users.\n* \"2\": Accessible only to registered users."
+    },
+    "description": {
+      "type": "string",
+      "description": "The name of the point, described as a generic type. For example, \"Post Office\"."
+    },
+    "directions": {
+      "type": "string",
+      "description": "Indicates address instructions."
+    },
+    "fax_number": {
+      "type": "string",
+      "description": "An Australian fax number."
+    },
+    "geo_location": {
+      "type": "object",
+      "description": "An object containing the precise coordinate location of an Australia Post outlet or facility.",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Location"
+        }
+      ]
+    },
+    "hatch_description": {
+      "type": "string",
+      "description": "A hatch is a customer service window in an Australia Post parcel pickup location. If a point has an associated hatch, this field may contain extra information specific to that hatch."
+    },
+    "hours": {
+      "type": "array",
+      "description": "An array of objects that describe the hours of operation or availability of services at a location.",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Hour"
+          }
+        ]
+      }
+    },
+    "location_code": {
+      "type": "string",
+      "description": "A unique identification code for a specific Australia Post asset or facility (See the type field below.)."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the point in all uppercase characters. For example, \"MELBOURNE GPO POST SHOP\"."
+    },
+    "partner_code": {
+      "type": "string",
+      "description": "A code to identify the owner entity of the assets, facilities or services referred to by the location_code. This value is currently always \"AP\" (Australia Post), however, this may be expanded in future to include other entities."
+    },
+    "phone_number": {
+      "type": "string",
+      "description": "An Australian telephone number."
+    },
+    "service_codes": {
+      "type": "array",
+      "description": "A comma-delimited string of service IDs that identify the services available at a point. For more information about services, see the getServices endpoint",
+      "items": {
+        "type": "string"
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "A single enumerated value denoting a service type available at a requested location. When multiple types are available at one location, a separate point object is returned for each one. There are six possible types: \n * UPL: Parcel lockers. \n * R_SPB: A red street post box. \n * C_SPB: Combined street post boxes (Both red and yellow boxes together). \n * PO:  An Australia Post outlet. \n * OS: Outstation (These are a part of a post office not in the same physical building. For example, a separate building dedicated to PO boxes.) \n * DC:  A delivery centre."
+    },
+    "work_centre_id": {
+      "type": "integer",
+      "description": "A unique numeric identification code that represents a parent Australia Post facility, and all of the child point objects (assets or facilities) associated with it. The facility and its point objects all share the same work_centre_id, but each point is unique.",
+      "format": "int32"
+    }
+  }
+}

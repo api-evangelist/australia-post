@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EventVO",
+  "description": "An event originating in a partner's system, which AP is to be informed of.",
+  "required": [
+    "article",
+    "audit",
+    "event_date_time",
+    "event_originator",
+    "event_reason",
+    "event_type"
+  ],
+  "type": "object",
+  "properties": {
+    "event_type": {
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string",
+      "description": "The code indicating which type of event has occurred."
+    },
+    "event_reason": {
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string",
+      "description": "Text describing the event type reason.",
+      "example": "Transferred"
+    },
+    "event_reason_text": {
+      "maxLength": 80,
+      "minLength": 0,
+      "type": "string",
+      "description": "Text or comments describing the event reason as entered by user.",
+      "example": "BADLY DAMAGED"
+    },
+    "event_date_time": {
+      "type": "string",
+      "description": "The timestamp indication when the reason occurred in ISO 8601 Offset from UTC format.",
+      "format": "date-time",
+      "example": "2019-07-08T09:04:45+10:00"
+    },
+    "article": {
+      "$ref": "#/components/schemas/ArticleVO"
+    },
+    "audit": {
+      "$ref": "#/components/schemas/AuditVO"
+    },
+    "event_originator": {
+      "$ref": "#/components/schemas/EventOriginatorVO"
+    },
+    "delivery": {
+      "$ref": "#/components/schemas/DeliveryVO"
+    },
+    "facility": {
+      "$ref": "#/components/schemas/FacilityVO"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AuditVO",
+  "description": "Audit details.",
+  "required": [
+    "event_id",
+    "event_source_name"
+  ],
+  "type": "object",
+  "properties": {
+    "event_source_name": {
+      "type": "string",
+      "description": "Event Source Name.",
+      "example": "Doddle"
+    },
+    "event_id": {
+      "type": "string",
+      "description": "Event ID.",
+      "example": "2f445d1d-cbfc-4e3d-a742-ec3dc8f009fa"
+    }
+  }
+}

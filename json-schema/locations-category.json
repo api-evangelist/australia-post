@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Category",
+  "description": "This object contains the name of a service category used to group services of a similar type.",
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "The URL-encoded equivalent of the name field."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the service category to which a service belongs."
+    }
+  }
+}

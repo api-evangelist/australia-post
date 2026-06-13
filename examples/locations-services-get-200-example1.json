@@ -1,0 +1,31 @@
+{
+  "title": "example1",
+  "api": "Locations API",
+  "path": "/services",
+  "method": "get",
+  "status": "200",
+  "summary": "Parcel collection outside standard hours",
+  "value": {
+    "services": [
+      {
+        "service_code": 1,
+        "partner_code": "AP",
+        "name": "parcel-pickup-outside-standard-hours",
+        "description": "Parcel collection outside standard hours",
+        "appointment_required": false,
+        "searchable": false,
+        "url_name": "parcel-pickup-outside-standard-hours",
+        "categories": [
+          {
+            "name": "opening_hours",
+            "description": "Opening hours"
+          },
+          {
+            "name": "parcels_mail",
+            "description": "Parcels & mail"
+          }
+        ]
+      }
+    ]
+  }
+}

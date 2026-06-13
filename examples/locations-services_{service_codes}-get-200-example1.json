@@ -1,0 +1,42 @@
+{
+  "title": "example1",
+  "api": "Locations API",
+  "path": "/services/{service_codes}",
+  "method": "get",
+  "status": "200",
+  "summary": "Example services",
+  "value": {
+    "services": [
+      {
+        "service_code": 3,
+        "partner_code": "AP",
+        "name": "Special",
+        "description": "Open before 9.00am weekdays",
+        "appointment_required": false,
+        "searchable": false,
+        "url_name": "open-before-900am-weekdays",
+        "categories": [
+          {
+            "name": "opening_hours",
+            "description": "Opening hours"
+          }
+        ]
+      },
+      {
+        "service_code": 6,
+        "partner_code": "AP",
+        "name": "Boxes_Available",
+        "description": "PO Boxes available",
+        "appointment_required": false,
+        "searchable": false,
+        "url_name": "po-boxes-available",
+        "categories": [
+          {
+            "name": "parcels_mail",
+            "description": "Parcels & mail"
+          }
+        ]
+      }
+    ]
+  }
+}

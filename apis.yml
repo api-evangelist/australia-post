@@ -93,7 +93,7 @@ apis:
       - type: Documentation
         url: https://auspost.com.au/developers/openapi/partner/locations/overview/
       - type: OpenAPI
-        url: https://auspost.com.au/developers/openapi/partner/locations/overview/
+        url: https://raw.githubusercontent.com/api-evangelist/australia-post/refs/heads/main/openapi/locations-openapi.json
   - aid: australia-post:delivery-choices
     name: Australia Post Delivery Choices API
     description: Allows customers to select preferred delivery options at checkout,
@@ -130,7 +130,7 @@ apis:
       - type: Documentation
         url: https://auspost.com.au/developers/openapi/partner/delivery-partner/1.3.0/overview/
       - type: OpenAPI
-        url: https://auspost.com.au/developers/openapi/partner/delivery-partner/1.3.0/overview/
+        url: https://raw.githubusercontent.com/api-evangelist/australia-post/refs/heads/main/openapi/delivery-partner-openapi.json
 common:
   - type: Website
     url: https://auspost.com.au/

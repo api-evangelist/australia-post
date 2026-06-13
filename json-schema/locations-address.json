@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Address",
+  "description": "An Address object contains full street address information for a specific Australia Post outlet or facility.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type of address. There are three possible enumerated values: STREET_ADDRESS, PARCEL_COLLECT and COLLECTION_POINT."
+    },
+    "address_line_1": {
+      "type": "string",
+      "description": "Address line one."
+    },
+    "address_line_2": {
+      "type": "string",
+      "description": "Address line two."
+    },
+    "address_line_3": {
+      "type": "string",
+      "description": "Address line three."
+    },
+    "suburb": {
+      "type": "string",
+      "description": "An Australian suburb name."
+    },
+    "state": {
+      "type": "string",
+      "description": "An Australian state name."
+    },
+    "postcode": {
+      "type": "integer",
+      "description": "A four-digit Australian postcode.",
+      "format": "int32"
+    },
+    "country_code": {
+      "type": "string",
+      "description": "An alphabetical two-digit country identification code, as specified in the ISO 3166-2 standard."
+    },
+    "country_name": {
+      "type": "string",
+      "description": "The name of the country (as written in English), represented by the country_code field."
+    },
+    "geo_location": {
+      "type": "object",
+      "description": "An object containing the precise coordinate location of an Australia Post outlet or facility.",
+      "nullable": true,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Location"
+        }
+      ]
+    },
+    "delivery_point_id": {
+      "type": "integer",
+      "description": "A unique numeric identification code that represents a point to which Australia Post delivers or receives deliveries.",
+      "format": "int32"
+    },
+    "directions": {
+      "type": "string",
+      "description": "Indicates address instructions."
+    }
+  }
+}

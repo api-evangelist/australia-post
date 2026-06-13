@@ -1,0 +1,250 @@
+{
+  "title": "multiple-points-returned-of-different-types",
+  "api": "Locations API",
+  "summary": "Multiple points returned of different types",
+  "value": {
+    "points": [
+      {
+        "location_code": "350748_PO",
+        "partner_code": "AP",
+        "name": "MELBOURNE GPO POST SHOP",
+        "type": "PO",
+        "description": "Post Office",
+        "phone_number": "13 13 18",
+        "fax_number": "(03)9203 3040",
+        "address": {
+          "address_line_1": "The Strand",
+          "address_line_2": "Shop 1 250 Elizabeth Street",
+          "suburb": "Melbourne",
+          "state": "VIC",
+          "postcode": "3000",
+          "country_name": "Australia",
+          "country_code": "AUS"
+        },
+        "geo_location": {
+          "lat": -37.812679,
+          "lon": 144.962732
+        },
+        "delivery_point_id": 34038295,
+        "work_centre_id": 350748,
+        "hatch_description": "In the PO Box Suite",
+        "service_codes": [
+          "108",
+          "9",
+          "33",
+          "17",
+          "6"
+        ],
+        "hours": [
+          {
+            "type": "HOURS",
+            "weekday": "0",
+            "start_time": "09:00",
+            "end_time": "17:00"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "1",
+            "start_time": "09:00",
+            "end_time": "17:00"
+          }
+        ]
+      },
+      {
+        "location_code": "63258302_UPL",
+        "partner_code": "AP",
+        "name": "Brisbane General Post Office Pcl Lkrs",
+        "type": "UPL",
+        "directions": "Parcel Locker is in 24/7 is area of Post Office Lane  between Queen and Elizabeth Streets.",
+        "description": "Available 24/7",
+        "address": {
+          "address_line_1": "261 Queen Street",
+          "suburb": "BRISBANE",
+          "state": "QLD",
+          "postcode": "4000",
+          "country_name": "Australia",
+          "country_code": "AU"
+        },
+        "geo_location": {
+          "lat": -27.468025,
+          "lon": 153.0281571
+        },
+        "delivery_point_id": 63258302,
+        "work_centre_id": 430553,
+        "hours": [
+          {
+            "type": "HOURS",
+            "weekday": "0",
+            "start_time": "00:00",
+            "end_time": "23:59:59"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "1",
+            "start_time": "00:00",
+            "end_time": "23:59:59"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "2",
+            "start_time": "00:00",
+            "end_time": "23:59:59"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "3",
+            "start_time": "00:00",
+            "end_time": "23:59:59"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "4",
+            "start_time": "00:00",
+            "end_time": "23:59:59"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "5",
+            "start_time": "00:00",
+            "end_time": "23:59:59"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "6",
+            "start_time": "00:00",
+            "end_time": "23:59:59"
+          }
+        ],
+        "usage_type": "1",
+        "service_codes": []
+      },
+      {
+        "location_code": "RED0015373",
+        "partner_code": "AP",
+        "type": "R_SPB",
+        "address": {
+          "address_line_1": "61 Main Road",
+          "suburb": "PERTH",
+          "state": "TAS",
+          "postcode": "7300",
+          "country_name": "Australia",
+          "country_code": "AU"
+        },
+        "geo_location": {
+          "lat": -41.576119,
+          "lon": 147.17379
+        },
+        "work_centre_id": 736042,
+        "hours": [],
+        "service_codes": []
+      },
+      {
+        "location_code": "RED0000480",
+        "partner_code": "AP",
+        "type": "C_SPB",
+        "address": {
+          "address_line_1": "River Side Off Mill Point Road",
+          "address_line_2": "16 Mends Street",
+          "suburb": "SOUTH PERTH",
+          "state": "WA",
+          "postcode": "6151",
+          "country_name": "Australia",
+          "country_code": "AU"
+        },
+        "geo_location": {
+          "lat": -31.97262,
+          "lon": 115.852525
+        },
+        "hours": [],
+        "service_codes": []
+      },
+      {
+        "location_code": "221356_OS",
+        "partner_code": "AP",
+        "name": "ACU CANBERRA PO BOX ANNEXE",
+        "type": "OS",
+        "description": "ACU CANBERRA PO BOX ANNEXE",
+        "address": {
+          "address_line_1": "223 Antill Street",
+          "suburb": "WATSON",
+          "state": "ACT",
+          "postcode": "2602",
+          "country_name": "Australia",
+          "country_code": "AU"
+        },
+        "geo_location": {
+          "lat": -35.246284,
+          "lon": 149.15599
+        },
+        "work_centre_id": 221356,
+        "hours": [],
+        "service_codes": [
+          "6",
+          "7"
+        ]
+      },
+      {
+        "location_code": "416153_DC",
+        "partner_code": "AP",
+        "name": "YATALA DC",
+        "type": "DC",
+        "description": "Delivery Centre",
+        "phone_number": "13 13 18",
+        "fax_number": "(07)3011 4084",
+        "address": {
+          "address_line_1": "3 Binary Street",
+          "suburb": "YATALA",
+          "state": "QLD",
+          "postcode": "4207",
+          "country_name": "Australia",
+          "country_code": "AU"
+        },
+        "geo_location": {
+          "lat": -27.758184,
+          "lon": 153.239131
+        },
+        "delivery_point_id": 36010322,
+        "work_centre_id": 416153,
+        "hours": [
+          {
+            "type": "HOURS",
+            "weekday": "0",
+            "start_time": "06:00",
+            "end_time": "17:00"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "1",
+            "start_time": "06:00",
+            "end_time": "17:00"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "2",
+            "start_time": "06:00",
+            "end_time": "17:00"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "3",
+            "start_time": "06:00",
+            "end_time": "17:00"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "4",
+            "start_time": "06:00",
+            "end_time": "17:00"
+          }
+        ],
+        "service_codes": [
+          "3",
+          "7",
+          "99",
+          "6",
+          "95"
+        ]
+      }
+    ]
+  }
+}

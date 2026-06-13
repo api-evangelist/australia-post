@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PointsResponse",
+  "description": "",
+  "properties": {
+    "points": {
+      "type": "array",
+      "description": "An array of point objects. A point object is a data structure returned from calls to Locations API endpoints, and represents the location of a specific Australia Post outlet or facility. The number of point objects returned depends on the endpoint used, and the parameters provided in the request.",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Point"
+          }
+        ]
+      }
+    }
+  }
+}

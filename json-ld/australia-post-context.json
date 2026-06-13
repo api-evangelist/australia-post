@@ -1,0 +1,186 @@
+{
+  "@context": {
+    "@vocab": "https://digitalapi.auspost.com.au/locations/v2/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "http://schema.org/",
+    "Point": {
+      "@id": "https://digitalapi.auspost.com.au/locations/v2/Point",
+      "@type": "@id"
+    },
+    "address": "address",
+    "secondary_addresses": "secondary_addresses",
+    "delivery_point_id": {
+      "@type": "xsd:integer"
+    },
+    "usage_type": "usage_type",
+    "description": "description",
+    "directions": "directions",
+    "fax_number": "fax_number",
+    "geo_location": "geo_location",
+    "hatch_description": "hatch_description",
+    "hours": "hours",
+    "location_code": "location_code",
+    "name": "name",
+    "partner_code": "partner_code",
+    "phone_number": "phone_number",
+    "service_codes": "service_codes",
+    "type": "type",
+    "work_centre_id": {
+      "@type": "xsd:integer"
+    },
+    "Address": {
+      "@id": "https://digitalapi.auspost.com.au/locations/v2/Address",
+      "@type": "@id"
+    },
+    "address_line_1": "address_line_1",
+    "address_line_2": "address_line_2",
+    "address_line_3": "address_line_3",
+    "suburb": "suburb",
+    "state": "state",
+    "postcode": {
+      "@type": "xsd:integer"
+    },
+    "country_code": "country_code",
+    "country_name": "country_name",
+    "Location": {
+      "@id": "https://digitalapi.auspost.com.au/locations/v2/Location",
+      "@type": "@id"
+    },
+    "lat": {
+      "@type": "xsd:decimal"
+    },
+    "lon": {
+      "@type": "xsd:decimal"
+    },
+    "distance": {
+      "@type": "xsd:decimal"
+    },
+    "Hour": {
+      "@id": "https://digitalapi.auspost.com.au/locations/v2/Hour",
+      "@type": "@id"
+    },
+    "end_date": "end_date",
+    "end_time": "end_time",
+    "start_date": "start_date",
+    "start_time": "start_time",
+    "weekday": {
+      "@type": "xsd:integer"
+    },
+    "Service": {
+      "@id": "https://digitalapi.auspost.com.au/locations/v2/Service",
+      "@type": "@id"
+    },
+    "appointment_required": {
+      "@type": "xsd:boolean"
+    },
+    "categories": "categories",
+    "searchable": {
+      "@type": "xsd:boolean"
+    },
+    "service_code": {
+      "@type": "xsd:integer"
+    },
+    "url_name": "url_name",
+    "Category": {
+      "@id": "https://digitalapi.auspost.com.au/locations/v2/Category",
+      "@type": "@id"
+    },
+    "PointsResponse": {
+      "@id": "https://digitalapi.auspost.com.au/locations/v2/PointsResponse",
+      "@type": "@id"
+    },
+    "points": "points",
+    "ServicesResponse": {
+      "@id": "https://digitalapi.auspost.com.au/locations/v2/ServicesResponse",
+      "@type": "@id"
+    },
+    "services": "services",
+    "ArticleVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/ArticleVO",
+      "@type": "@id"
+    },
+    "article_id": "article_id",
+    "full_barcode": "full_barcode",
+    "external_track_url": "external_track_url",
+    "AttachmentVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/AttachmentVO",
+      "@type": "@id"
+    },
+    "attachment_content": "attachment_content",
+    "content_type": "content_type",
+    "AuditVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/AuditVO",
+      "@type": "@id"
+    },
+    "event_source_name": "event_source_name",
+    "event_id": "event_id",
+    "DeliveryVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/DeliveryVO",
+      "@type": "@id"
+    },
+    "destination_postcode": "destination_postcode",
+    "proof_of_delivery": "proof_of_delivery",
+    "EventOriginatorVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/EventOriginatorVO",
+      "@type": "@id"
+    },
+    "system": "system",
+    "person": "person",
+    "EventVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/EventVO",
+      "@type": "@id"
+    },
+    "event_type": "event_type",
+    "event_reason": "event_reason",
+    "event_reason_text": "event_reason_text",
+    "event_date_time": {
+      "@type": "xsd:dateTime"
+    },
+    "article": "article",
+    "audit": "audit",
+    "event_originator": "event_originator",
+    "delivery": "delivery",
+    "facility": "facility",
+    "FacilityVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/FacilityVO",
+      "@type": "@id"
+    },
+    "location": "location",
+    "LocationVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/LocationVO",
+      "@type": "@id"
+    },
+    "work_centre_code": "work_centre_code",
+    "location_name": "location_name",
+    "PersonVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/PersonVO",
+      "@type": "@id"
+    },
+    "person_id": "person_id",
+    "ProofOfDeliveryVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/ProofOfDeliveryVO",
+      "@type": "@id"
+    },
+    "signer_name": "signer_name",
+    "identification_type": "identification_type",
+    "receiver_dob": {
+      "@type": "xsd:dateTime"
+    },
+    "attachment": "attachment",
+    "service_actions": "service_actions",
+    "ServiceActionsVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/ServiceActionsVO",
+      "@type": "@id"
+    },
+    "type_id": "type_id",
+    "id_available": "id_available",
+    "sight_id": "sight_id",
+    "over_18": "over_18",
+    "SystemVO": {
+      "@id": "https://digitalapi.auspost.com.au/delivery-partner/SystemVO",
+      "@type": "@id"
+    },
+    "sender_id": "sender_id",
+    "sender_name": "sender_name"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "title": "single-po-returned",
+  "api": "Locations API",
+  "summary": "Single PO point returned",
+  "value": {
+    "points": [
+      {
+        "location_code": "350748_PO",
+        "partner_code": "AP",
+        "name": "MELBOURNE GPO POST SHOP",
+        "type": "PO",
+        "description": "Post Office",
+        "phone_number": "13 13 18",
+        "fax_number": "(03)9203 3040",
+        "address": {
+          "address_line_1": "The Strand",
+          "address_line_2": "Shop 1 250 Elizabeth Street",
+          "suburb": "Melbourne",
+          "state": "VIC",
+          "postcode": "3000",
+          "country_name": "Australia",
+          "country_code": "AUS"
+        },
+        "geo_location": {
+          "lat": -37.812679,
+          "lon": 144.962732
+        },
+        "delivery_point_id": 34038295,
+        "work_centre_id": 350748,
+        "hatch_description": "In the PO Box Suite",
+        "service_codes": [
+          "108",
+          "9",
+          "33",
+          "17",
+          "6"
+        ],
+        "hours": [
+          {
+            "type": "HOURS",
+            "weekday": "0",
+            "start_time": "09:00",
+            "end_time": "17:00"
+          },
+          {
+            "type": "HOURS",
+            "weekday": "1",
+            "start_time": "09:00",
+            "end_time": "17:00"
+          }
+        ]
+      }
+    ]
+  }
+}

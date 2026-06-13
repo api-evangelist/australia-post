@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ArticleVO",
+  "description": "Article details.",
+  "required": [
+    "article_id"
+  ],
+  "type": "object",
+  "properties": {
+    "article_id": {
+      "maxLength": 100,
+      "minLength": 1,
+      "type": "string",
+      "description": "The Article Id.",
+      "example": "JQ6378399101"
+    },
+    "full_barcode": {
+      "maxLength": 100,
+      "minLength": 0,
+      "type": "string",
+      "description": "The Full Barcode."
+    },
+    "external_track_url": {
+      "type": "string",
+      "description": "External tracking url to allow tracking via 3rd party carrier."
+    }
+  }
+}

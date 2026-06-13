@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AttachmentVO",
+  "description": "Image attachments showing details of a delivery (e.g. for damaged article).",
+  "required": [
+    "attachment_content",
+    "content_type"
+  ],
+  "type": "object",
+  "properties": {
+    "attachment_content": {
+      "type": "string",
+      "description": "A base64 encoded PNG image of the recipients signature. Restricted to 10240 bytes.",
+      "example": "VGhpcyB3b3VsZCBiZSBhIHNhbXBsZSBQTkcgaW1hZ2UgYmluYXJ5..."
+    },
+    "content_type": {
+      "type": "string",
+      "description": "The type of image format of the attachment content.",
+      "example": "image/png"
+    }
+  }
+}

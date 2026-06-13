@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hour",
+  "description": "An Hour object describes a range of date and time-related information for a specific Australia Post outlet or facility.",
+  "properties": {
+    "end_date": {
+      "type": "string",
+      "description": "The end date of an operating period, when non-standard hours are observed. The date is returned in the format DD/MM/YYYY. For example, \"30/06/2016\"."
+    },
+    "end_time": {
+      "type": "string",
+      "description": "The time when an outlet or facility closes on a particular day, in the format hh:mm. For example, 23:15."
+    },
+    "start_date": {
+      "type": "string",
+      "description": "The start date of an operating period, when non-standard hours are observed. The date is returned in the format DD/MM/YYYY. For example, \"29/06/2016\"."
+    },
+    "start_time": {
+      "type": "string",
+      "description": "The time when an outlet or facility opens on a particular day, in the format hh:mm. For example, 09:00."
+    },
+    "type": {
+      "type": "string",
+      "description": "The hour type, representing the hours of operation at a location. There are six possible enumerated values: \n * HOURS: Standard operating hours when a location is open. \n * LUNCH: The lunchtime period when a location is closed. \n * HATCH: The hours when the parcel pickup customer service counter is open. \n * SPECIAL_HOURS   Non-standard operating hours at a location. \n * SPECIAL_CLOSED  Non-standard closing times at a location. \n * SPECIAL_LUNCH: A non-standard time when a location is closed for the lunchtime period. \n **Note: ** Times are specific to the location of the point, expressed as local time at that point."
+    },
+    "weekday": {
+      "type": "integer",
+      "description": "Day of the week, enumerated from Monday (0) to Sunday (6)."
+    }
+  }
+}

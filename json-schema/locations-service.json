@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Service",
+  "description": "A Service object describes a specific service that might be available from an Australia Post outlet or facility.  **Note:** \n Not all outlets and facilities offer all of the services returned by the getServices endpoint.",
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "The name of the service."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the service expressed as an enumerated value."
+    },
+    "appointment_required": {
+      "type": "boolean",
+      "description": "A value indicating if a customer must first make an appointment for the requested service."
+    },
+    "categories": {
+      "type": "array",
+      "description": "An array of objects that describe the service category to which a specific service belongs.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "The URL-encoded equivalent of the name field."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the service category to which a service belongs."
+          }
+        },
+        "description": "This object contains the name of a service category used to group services of a similar type."
+      }
+    },
+    "searchable": {
+      "type": "boolean",
+      "description": "A value dictating whether or not a specific service will be presented in the response to a service query."
+    },
+    "partner_code": {
+      "type": "string",
+      "description": "A code to identify the owner entity of the assets, facilities or services referred to by the location_code. This value is currently always \"AP\" (Australia Post), however, this may be expanded in future to include other entities."
+    },
+    "service_code": {
+      "type": "integer",
+      "description": "A unique number identifying a specific service that is available at a location. For example, \"99\" that identifies the PostBillPay service.",
+      "format": "int32"
+    },
+    "url_name": {
+      "type": "string",
+      "description": "The URL-encoded equivalent of the description field."
+    }
+  }
+}

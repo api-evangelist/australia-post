@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ServiceActionsVO",
+  "description": "Elements relating to the specific Product Service Codes, e.g. Service Codes 81, 82 and 83 are for alcohol and require ID to be presented in some Australian States",
+  "type": "object",
+  "properties": {
+    "type_id": {
+      "maxLength": 50,
+      "minLength": 0,
+      "type": "string",
+      "description": "The type of ID presented. Valid types are: Australian Driver License,Red or Orange MyPost card with address, Keypass or other Government-issued Proof of Age card, Australian or international passport, Digital iD."
+    },
+    "id_available": {
+      "pattern": "X|N",
+      "type": "string",
+      "description": "Was ID of the receiver made available at the time of delivery?",
+      "example": "X"
+    },
+    "sight_id": {
+      "pattern": "X|N",
+      "type": "string",
+      "description": "Was ID of the receiver sighted by the person making the delivery?",
+      "example": "X"
+    },
+    "over_18": {
+      "pattern": "X|N",
+      "type": "string",
+      "description": "Was the recipient over 18? Relevant where the Service Code on the manifest is one of 81, 82, 83.",
+      "example": "X"
+    }
+  }
+}

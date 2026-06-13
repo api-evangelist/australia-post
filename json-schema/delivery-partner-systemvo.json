@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SystemVO",
+  "description": "The System where the event originated.",
+  "required": [
+    "sender_id",
+    "sender_name"
+  ],
+  "type": "object",
+  "properties": {
+    "sender_id": {
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string",
+      "description": "The identifier of the sending system.",
+      "example": "DODDLE"
+    },
+    "sender_name": {
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string",
+      "description": "The name of the sending system.",
+      "example": "Doddle"
+    }
+  }
+}

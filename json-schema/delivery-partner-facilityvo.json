@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FacilityVO",
+  "description": "Facility details",
+  "type": "object",
+  "properties": {
+    "location": {
+      "$ref": "#/components/schemas/LocationVO"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LocationVO",
+  "description": "Location details",
+  "required": [
+    "location_name",
+    "work_centre_code"
+  ],
+  "type": "object",
+  "properties": {
+    "work_centre_code": {
+      "maxLength": 10,
+      "minLength": 1,
+      "type": "string",
+      "description": "Work Centre Code.",
+      "example": "123456"
+    },
+    "location_name": {
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string",
+      "description": "Location Name.",
+      "example": "ABBOTSFORD"
+    }
+  }
+}

@@ -1,0 +1,915 @@
+{
+  "apis": [
+    "Locations API",
+    "Delivery Partner API"
+  ],
+  "terms": [
+    {
+      "term": "getPointsByPostcode",
+      "type": "operation",
+      "api": "Locations API",
+      "path": "/points/postcode/{postcode}",
+      "method": "get"
+    },
+    {
+      "term": "getGeoLocationsByPostCodeUsingGET",
+      "type": "operationId",
+      "api": "Locations API",
+      "path": "/points/postcode/{postcode}",
+      "method": "get"
+    },
+    {
+      "term": "postcode",
+      "type": "parameter",
+      "api": "Locations API",
+      "description": "A four-digit Australian postcode."
+    },
+    {
+      "term": "getPointsByWorkCenterID",
+      "type": "operation",
+      "api": "Locations API",
+      "path": "/points/workcentres/{work_centre_id}",
+      "method": "get"
+    },
+    {
+      "term": "getGeoLocationsByWcidUsingGET",
+      "type": "operationId",
+      "api": "Locations API",
+      "path": "/points/workcentres/{work_centre_id}",
+      "method": "get"
+    },
+    {
+      "term": "work_centre_id",
+      "type": "parameter",
+      "api": "Locations API",
+      "description": "See the endpoint description above."
+    },
+    {
+      "term": "getPointsByDeliveryPointId",
+      "type": "operation",
+      "api": "Locations API",
+      "path": "/points/deliverypoints/{delivery_point_id}",
+      "method": "get"
+    },
+    {
+      "term": "getGeoLocationsByDeliveryPointIdUsingGET",
+      "type": "operationId",
+      "api": "Locations API",
+      "path": "/points/deliverypoints/{delivery_point_id}",
+      "method": "get"
+    },
+    {
+      "term": "delivery_point_id",
+      "type": "parameter",
+      "api": "Locations API",
+      "description": "See the endpoint description above."
+    },
+    {
+      "term": "getPointsByLocationCode",
+      "type": "operation",
+      "api": "Locations API",
+      "path": "/points/{location_code}",
+      "method": "get"
+    },
+    {
+      "term": "getPointsByLocationCodeUsingGET",
+      "type": "operationId",
+      "api": "Locations API",
+      "path": "/points/{location_code}",
+      "method": "get"
+    },
+    {
+      "term": "location_code",
+      "type": "parameter",
+      "api": "Locations API",
+      "description": "See the endpoint description above."
+    },
+    {
+      "term": "getPointsByType",
+      "type": "operation",
+      "api": "Locations API",
+      "path": "/points/type/{points_type}",
+      "method": "get"
+    },
+    {
+      "term": "getPointsByTypeUsingGET",
+      "type": "operationId",
+      "api": "Locations API",
+      "path": "/points/type/{points_type}",
+      "method": "get"
+    },
+    {
+      "term": "points_type",
+      "type": "parameter",
+      "api": "Locations API",
+      "description": "The point's type. There are six of these enumerated values, to select from: \n * UPL: Parcel lockers. \n * R_SPB: A red street post box. \n * C_SPB: Combined street post boxes (Both red and yellow boxes together). \n * PO: An Australia Post outlet. \n * OS: Outstation (These are a part of a post office not in the same physical building. For example, a separate building dedicated to PO boxes.) \n * DC: A delivery centre."
+    },
+    {
+      "term": "getPointsByGeoCoordinates",
+      "type": "operation",
+      "api": "Locations API",
+      "path": "/points/geo/{longitude}/{latitude}",
+      "method": "get"
+    },
+    {
+      "term": "getGeoLocationsUsingGET",
+      "type": "operationId",
+      "api": "Locations API",
+      "path": "/points/geo/{longitude}/{latitude}",
+      "method": "get"
+    },
+    {
+      "term": "longitude",
+      "type": "parameter",
+      "api": "Locations API",
+      "description": "A coordinate representing the angular distance in degrees, minutes and seconds, of a point east or west of the Greenwich Meridian, expressed as a double."
+    },
+    {
+      "term": "latitude",
+      "type": "parameter",
+      "api": "Locations API",
+      "description": "A coordinate representing the angular distance in degrees, minutes and seconds, of a point north or south of the equator, expressed as a double."
+    },
+    {
+      "term": "radius",
+      "type": "parameter",
+      "api": "Locations API",
+      "description": "The radius in kilometres, to search around the provided latitude/longitude coordinate point. The default value is 50, and the hard limit is 1000Km."
+    },
+    {
+      "term": "services",
+      "type": "parameter",
+      "api": "Locations API",
+      "description": "A comma-delimited string of service codes by which to filter the returned list of matching locations. **Note: ** A list of current services is available through the getServices endpoint."
+    },
+    {
+      "term": "limit",
+      "type": "parameter",
+      "api": "Locations API",
+      "description": "The maximum number of results to return. The default value is 5."
+    },
+    {
+      "term": "getServices",
+      "type": "operation",
+      "api": "Locations API",
+      "path": "/services",
+      "method": "get"
+    },
+    {
+      "term": "getServicesUsingGET",
+      "type": "operationId",
+      "api": "Locations API",
+      "path": "/services",
+      "method": "get"
+    },
+    {
+      "term": "getServicesByServiceCodes",
+      "type": "operation",
+      "api": "Locations API",
+      "path": "/services/{service_codes}",
+      "method": "get"
+    },
+    {
+      "term": "getServicesByServiceCodesUsingGET",
+      "type": "operationId",
+      "api": "Locations API",
+      "path": "/services/{service_codes}",
+      "method": "get"
+    },
+    {
+      "term": "service_codes",
+      "type": "parameter",
+      "api": "Locations API",
+      "description": "A comma-delimited list of service codes by which to filter the returned list of matching locations."
+    },
+    {
+      "term": "Point",
+      "type": "schema",
+      "api": "Locations API",
+      "description": "A point object is a descriptive record of an individual Australia Post outlet or facility, that includes location, contact and service availability data."
+    },
+    {
+      "term": "address",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "An object that contains full street address information for a specific Australia Post outlet or facility."
+    },
+    {
+      "term": "secondary_addresses",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "An object that contains full street address information for a specific Australia Post outlet or facility."
+    },
+    {
+      "term": "delivery_point_id",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "A unique numeric identification code that represents a point to which Australia Post delivers or receives deliveries."
+    },
+    {
+      "term": "usage_type",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "The usage_type field specifies the access level for a location point.\nFor parcel lockers (type=UPL):\n* \"1\": Accessible to both registered and unregistered users.\n* \"2\": Accessible only to registered users."
+    },
+    {
+      "term": "description",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "The name of the point, described as a generic type. For example, \"Post Office\"."
+    },
+    {
+      "term": "directions",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "Indicates address instructions."
+    },
+    {
+      "term": "fax_number",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "An Australian fax number."
+    },
+    {
+      "term": "geo_location",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "An object containing the precise coordinate location of an Australia Post outlet or facility."
+    },
+    {
+      "term": "hatch_description",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "A hatch is a customer service window in an Australia Post parcel pickup location. If a point has an associated hatch, this field may contain extra information specific to that hatch."
+    },
+    {
+      "term": "hours",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "An array of objects that describe the hours of operation or availability of services at a location."
+    },
+    {
+      "term": "location_code",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "A unique identification code for a specific Australia Post asset or facility (See the type field below.)."
+    },
+    {
+      "term": "name",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "The name of the point in all uppercase characters. For example, \"MELBOURNE GPO POST SHOP\"."
+    },
+    {
+      "term": "partner_code",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "A code to identify the owner entity of the assets, facilities or services referred to by the location_code. This value is currently always \"AP\" (Australia Post), however, this may be expanded in future to include other entities."
+    },
+    {
+      "term": "phone_number",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "An Australian telephone number."
+    },
+    {
+      "term": "service_codes",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "A comma-delimited string of service IDs that identify the services available at a point. For more information about services, see the getServices endpoint"
+    },
+    {
+      "term": "type",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "A single enumerated value denoting a service type available at a requested location. When multiple types are available at one location, a separate point object is returned for each one. There are six possible types: \n * UPL: Parcel lockers. \n * R_SPB: A red street post box. \n * C_SPB: Combined street post boxes (Both red and yellow boxes together). \n * PO:  An Australia Post outlet. \n * OS: Outstation (These are a part of a post office not in the same physical building. For example, a separate building dedicated to PO boxes.) \n * DC:  A delivery centre."
+    },
+    {
+      "term": "work_centre_id",
+      "type": "property",
+      "schema": "Point",
+      "api": "Locations API",
+      "description": "A unique numeric identification code that represents a parent Australia Post facility, and all of the child point objects (assets or facilities) associated with it. The facility and its point objects all share the same work_centre_id, but each point is unique."
+    },
+    {
+      "term": "Address",
+      "type": "schema",
+      "api": "Locations API",
+      "description": "An Address object contains full street address information for a specific Australia Post outlet or facility."
+    },
+    {
+      "term": "type",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "Type of address. There are three possible enumerated values: STREET_ADDRESS, PARCEL_COLLECT and COLLECTION_POINT."
+    },
+    {
+      "term": "address_line_1",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "Address line one."
+    },
+    {
+      "term": "address_line_2",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "Address line two."
+    },
+    {
+      "term": "address_line_3",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "Address line three."
+    },
+    {
+      "term": "suburb",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "An Australian suburb name."
+    },
+    {
+      "term": "state",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "An Australian state name."
+    },
+    {
+      "term": "postcode",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "A four-digit Australian postcode."
+    },
+    {
+      "term": "country_code",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "An alphabetical two-digit country identification code, as specified in the ISO 3166-2 standard."
+    },
+    {
+      "term": "country_name",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "The name of the country (as written in English), represented by the country_code field."
+    },
+    {
+      "term": "geo_location",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "An object containing the precise coordinate location of an Australia Post outlet or facility."
+    },
+    {
+      "term": "delivery_point_id",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "A unique numeric identification code that represents a point to which Australia Post delivers or receives deliveries."
+    },
+    {
+      "term": "directions",
+      "type": "property",
+      "schema": "Address",
+      "api": "Locations API",
+      "description": "Indicates address instructions."
+    },
+    {
+      "term": "Location",
+      "type": "schema",
+      "api": "Locations API",
+      "description": "This object describes the precise location of an Australia Post outlet or facility. This object always returns latitude and longitude values for a point, although requests to the getPointsByGeoCoordinates endpoint will also include a distance value."
+    },
+    {
+      "term": "lat",
+      "type": "property",
+      "schema": "Location",
+      "api": "Locations API",
+      "description": "The global positioning latitude coordinate for a location. For example, 144.9696466."
+    },
+    {
+      "term": "lon",
+      "type": "property",
+      "schema": "Location",
+      "api": "Locations API",
+      "description": "The global positioning longitude coordinate for a location. For example, -37.8126618."
+    },
+    {
+      "term": "distance",
+      "type": "property",
+      "schema": "Location",
+      "api": "Locations API",
+      "description": "The distance in kilometres to a matching point from the coordinates provided in the endpoint request. **Note:** This field is displayed in the results for all endpoints that require you to provide longitude and latitude coordinates."
+    },
+    {
+      "term": "Hour",
+      "type": "schema",
+      "api": "Locations API",
+      "description": "An Hour object describes a range of date and time-related information for a specific Australia Post outlet or facility."
+    },
+    {
+      "term": "end_date",
+      "type": "property",
+      "schema": "Hour",
+      "api": "Locations API",
+      "description": "The end date of an operating period, when non-standard hours are observed. The date is returned in the format DD/MM/YYYY. For example, \"30/06/2016\"."
+    },
+    {
+      "term": "end_time",
+      "type": "property",
+      "schema": "Hour",
+      "api": "Locations API",
+      "description": "The time when an outlet or facility closes on a particular day, in the format hh:mm. For example, 23:15."
+    },
+    {
+      "term": "start_date",
+      "type": "property",
+      "schema": "Hour",
+      "api": "Locations API",
+      "description": "The start date of an operating period, when non-standard hours are observed. The date is returned in the format DD/MM/YYYY. For example, \"29/06/2016\"."
+    },
+    {
+      "term": "start_time",
+      "type": "property",
+      "schema": "Hour",
+      "api": "Locations API",
+      "description": "The time when an outlet or facility opens on a particular day, in the format hh:mm. For example, 09:00."
+    },
+    {
+      "term": "type",
+      "type": "property",
+      "schema": "Hour",
+      "api": "Locations API",
+      "description": "The hour type, representing the hours of operation at a location. There are six possible enumerated values: \n * HOURS: Standard operating hours when a location is open. \n * LUNCH: The lunchtime period when a location is closed. \n * HATCH: The hours when the parcel pickup customer service counter is open. \n * SPECIAL_HOURS   Non-standard operating hours at a location. \n * SPECIAL_CLOSED  Non-standard closing times at a location. \n * SPECIAL_LUNCH: A non-standard time when a location is closed for the lunchtime period. \n **Note: ** Times are specific to the location of the point, expressed as local time at that point."
+    },
+    {
+      "term": "weekday",
+      "type": "property",
+      "schema": "Hour",
+      "api": "Locations API",
+      "description": "Day of the week, enumerated from Monday (0) to Sunday (6)."
+    },
+    {
+      "term": "Service",
+      "type": "schema",
+      "api": "Locations API",
+      "description": "A Service object describes a specific service that might be available from an Australia Post outlet or facility.  **Note:** \n Not all outlets and facilities offer all of the services returned by the getServices endpoint."
+    },
+    {
+      "term": "description",
+      "type": "property",
+      "schema": "Service",
+      "api": "Locations API",
+      "description": "The name of the service."
+    },
+    {
+      "term": "name",
+      "type": "property",
+      "schema": "Service",
+      "api": "Locations API",
+      "description": "The name of the service expressed as an enumerated value."
+    },
+    {
+      "term": "appointment_required",
+      "type": "property",
+      "schema": "Service",
+      "api": "Locations API",
+      "description": "A value indicating if a customer must first make an appointment for the requested service."
+    },
+    {
+      "term": "categories",
+      "type": "property",
+      "schema": "Service",
+      "api": "Locations API",
+      "description": "An array of objects that describe the service category to which a specific service belongs."
+    },
+    {
+      "term": "searchable",
+      "type": "property",
+      "schema": "Service",
+      "api": "Locations API",
+      "description": "A value dictating whether or not a specific service will be presented in the response to a service query."
+    },
+    {
+      "term": "partner_code",
+      "type": "property",
+      "schema": "Service",
+      "api": "Locations API",
+      "description": "A code to identify the owner entity of the assets, facilities or services referred to by the location_code. This value is currently always \"AP\" (Australia Post), however, this may be expanded in future to include other entities."
+    },
+    {
+      "term": "service_code",
+      "type": "property",
+      "schema": "Service",
+      "api": "Locations API",
+      "description": "A unique number identifying a specific service that is available at a location. For example, \"99\" that identifies the PostBillPay service."
+    },
+    {
+      "term": "url_name",
+      "type": "property",
+      "schema": "Service",
+      "api": "Locations API",
+      "description": "The URL-encoded equivalent of the description field."
+    },
+    {
+      "term": "Category",
+      "type": "schema",
+      "api": "Locations API",
+      "description": "This object contains the name of a service category used to group services of a similar type."
+    },
+    {
+      "term": "description",
+      "type": "property",
+      "schema": "Category",
+      "api": "Locations API",
+      "description": "The URL-encoded equivalent of the name field."
+    },
+    {
+      "term": "name",
+      "type": "property",
+      "schema": "Category",
+      "api": "Locations API",
+      "description": "The name of the service category to which a service belongs."
+    },
+    {
+      "term": "PointsResponse",
+      "type": "schema",
+      "api": "Locations API",
+      "description": ""
+    },
+    {
+      "term": "points",
+      "type": "property",
+      "schema": "PointsResponse",
+      "api": "Locations API",
+      "description": "An array of point objects. A point object is a data structure returned from calls to Locations API endpoints, and represents the location of a specific Australia Post outlet or facility. The number of point objects returned depends on the endpoint used, and the parameters provided in the request."
+    },
+    {
+      "term": "ServicesResponse",
+      "type": "schema",
+      "api": "Locations API",
+      "description": ""
+    },
+    {
+      "term": "services",
+      "type": "property",
+      "schema": "ServicesResponse",
+      "api": "Locations API",
+      "description": "An array of service objects. A service object is a data structure returned from calls to the /services endpoint, and represents an Australia Post service that might be available at one of its outlets or facilities. There are no parameters by which to filter the service objects returned from the /service endpoint. \n \n **Note:** Not all outlets and facilities offer all services, and the number of service objects returned may change if Australia Post increases or decreases the number of services it offers."
+    },
+    {
+      "term": "Sends the delivery event to Australia Post",
+      "type": "operation",
+      "api": "Delivery Partner API",
+      "path": "/api/v1/event",
+      "method": "post"
+    },
+    {
+      "term": "event",
+      "type": "operationId",
+      "api": "Delivery Partner API",
+      "path": "/api/v1/event",
+      "method": "post"
+    },
+    {
+      "term": "ArticleVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "Article details."
+    },
+    {
+      "term": "article_id",
+      "type": "property",
+      "schema": "ArticleVO",
+      "api": "Delivery Partner API",
+      "description": "The Article Id."
+    },
+    {
+      "term": "full_barcode",
+      "type": "property",
+      "schema": "ArticleVO",
+      "api": "Delivery Partner API",
+      "description": "The Full Barcode."
+    },
+    {
+      "term": "external_track_url",
+      "type": "property",
+      "schema": "ArticleVO",
+      "api": "Delivery Partner API",
+      "description": "External tracking url to allow tracking via 3rd party carrier."
+    },
+    {
+      "term": "AttachmentVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "Image attachments showing details of a delivery (e.g. for damaged article)."
+    },
+    {
+      "term": "attachment_content",
+      "type": "property",
+      "schema": "AttachmentVO",
+      "api": "Delivery Partner API",
+      "description": "A base64 encoded PNG image of the recipients signature. Restricted to 10240 bytes."
+    },
+    {
+      "term": "content_type",
+      "type": "property",
+      "schema": "AttachmentVO",
+      "api": "Delivery Partner API",
+      "description": "The type of image format of the attachment content."
+    },
+    {
+      "term": "AuditVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "Audit details."
+    },
+    {
+      "term": "event_source_name",
+      "type": "property",
+      "schema": "AuditVO",
+      "api": "Delivery Partner API",
+      "description": "Event Source Name."
+    },
+    {
+      "term": "event_id",
+      "type": "property",
+      "schema": "AuditVO",
+      "api": "Delivery Partner API",
+      "description": "Event ID."
+    },
+    {
+      "term": "DeliveryVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "Delivery details."
+    },
+    {
+      "term": "destination_postcode",
+      "type": "property",
+      "schema": "DeliveryVO",
+      "api": "Delivery Partner API",
+      "description": "The 4-digit Australian Postcode to where the article has been sent"
+    },
+    {
+      "term": "proof_of_delivery",
+      "type": "property",
+      "schema": "DeliveryVO",
+      "api": "Delivery Partner API",
+      "description": ""
+    },
+    {
+      "term": "EventOriginatorVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "Details of the System where the event originated."
+    },
+    {
+      "term": "system",
+      "type": "property",
+      "schema": "EventOriginatorVO",
+      "api": "Delivery Partner API",
+      "description": ""
+    },
+    {
+      "term": "person",
+      "type": "property",
+      "schema": "EventOriginatorVO",
+      "api": "Delivery Partner API",
+      "description": ""
+    },
+    {
+      "term": "EventVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "An event originating in a partner's system, which AP is to be informed of."
+    },
+    {
+      "term": "event_type",
+      "type": "property",
+      "schema": "EventVO",
+      "api": "Delivery Partner API",
+      "description": "The code indicating which type of event has occurred."
+    },
+    {
+      "term": "event_reason",
+      "type": "property",
+      "schema": "EventVO",
+      "api": "Delivery Partner API",
+      "description": "Text describing the event type reason."
+    },
+    {
+      "term": "event_reason_text",
+      "type": "property",
+      "schema": "EventVO",
+      "api": "Delivery Partner API",
+      "description": "Text or comments describing the event reason as entered by user."
+    },
+    {
+      "term": "event_date_time",
+      "type": "property",
+      "schema": "EventVO",
+      "api": "Delivery Partner API",
+      "description": "The timestamp indication when the reason occurred in ISO 8601 Offset from UTC format."
+    },
+    {
+      "term": "article",
+      "type": "property",
+      "schema": "EventVO",
+      "api": "Delivery Partner API",
+      "description": ""
+    },
+    {
+      "term": "audit",
+      "type": "property",
+      "schema": "EventVO",
+      "api": "Delivery Partner API",
+      "description": ""
+    },
+    {
+      "term": "event_originator",
+      "type": "property",
+      "schema": "EventVO",
+      "api": "Delivery Partner API",
+      "description": ""
+    },
+    {
+      "term": "delivery",
+      "type": "property",
+      "schema": "EventVO",
+      "api": "Delivery Partner API",
+      "description": ""
+    },
+    {
+      "term": "facility",
+      "type": "property",
+      "schema": "EventVO",
+      "api": "Delivery Partner API",
+      "description": ""
+    },
+    {
+      "term": "FacilityVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "Facility details"
+    },
+    {
+      "term": "location",
+      "type": "property",
+      "schema": "FacilityVO",
+      "api": "Delivery Partner API",
+      "description": ""
+    },
+    {
+      "term": "LocationVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "Location details"
+    },
+    {
+      "term": "work_centre_code",
+      "type": "property",
+      "schema": "LocationVO",
+      "api": "Delivery Partner API",
+      "description": "Work Centre Code."
+    },
+    {
+      "term": "location_name",
+      "type": "property",
+      "schema": "LocationVO",
+      "api": "Delivery Partner API",
+      "description": "Location Name."
+    },
+    {
+      "term": "PersonVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "The person associated with the origin of the event."
+    },
+    {
+      "term": "person_id",
+      "type": "property",
+      "schema": "PersonVO",
+      "api": "Delivery Partner API",
+      "description": "The identifier of the sending person."
+    },
+    {
+      "term": "ProofOfDeliveryVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "The details of the delivery."
+    },
+    {
+      "term": "signer_name",
+      "type": "property",
+      "schema": "ProofOfDeliveryVO",
+      "api": "Delivery Partner API",
+      "description": "The name of the person signing for acceptance of the delivery."
+    },
+    {
+      "term": "identification_type",
+      "type": "property",
+      "schema": "ProofOfDeliveryVO",
+      "api": "Delivery Partner API",
+      "description": "The type of ID presented."
+    },
+    {
+      "term": "receiver_dob",
+      "type": "property",
+      "schema": "ProofOfDeliveryVO",
+      "api": "Delivery Partner API",
+      "description": "The date of birth of the recipient (ddMMyyyy)."
+    },
+    {
+      "term": "attachment",
+      "type": "property",
+      "schema": "ProofOfDeliveryVO",
+      "api": "Delivery Partner API",
+      "description": ""
+    },
+    {
+      "term": "service_actions",
+      "type": "property",
+      "schema": "ProofOfDeliveryVO",
+      "api": "Delivery Partner API",
+      "description": ""
+    },
+    {
+      "term": "ServiceActionsVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "Elements relating to the specific Product Service Codes, e.g. Service Codes 81, 82 and 83 are for alcohol and require ID to be presented in some Australian States"
+    },
+    {
+      "term": "type_id",
+      "type": "property",
+      "schema": "ServiceActionsVO",
+      "api": "Delivery Partner API",
+      "description": "The type of ID presented. Valid types are: Australian Driver License,Red or Orange MyPost card with address, Keypass or other Government-issued Proof of Age card, Australian or international passport, Digital iD."
+    },
+    {
+      "term": "id_available",
+      "type": "property",
+      "schema": "ServiceActionsVO",
+      "api": "Delivery Partner API",
+      "description": "Was ID of the receiver made available at the time of delivery?"
+    },
+    {
+      "term": "sight_id",
+      "type": "property",
+      "schema": "ServiceActionsVO",
+      "api": "Delivery Partner API",
+      "description": "Was ID of the receiver sighted by the person making the delivery?"
+    },
+    {
+      "term": "over_18",
+      "type": "property",
+      "schema": "ServiceActionsVO",
+      "api": "Delivery Partner API",
+      "description": "Was the recipient over 18? Relevant where the Service Code on the manifest is one of 81, 82, 83."
+    },
+    {
+      "term": "SystemVO",
+      "type": "schema",
+      "api": "Delivery Partner API",
+      "description": "The System where the event originated."
+    },
+    {
+      "term": "sender_id",
+      "type": "property",
+      "schema": "SystemVO",
+      "api": "Delivery Partner API",
+      "description": "The identifier of the sending system."
+    },
+    {
+      "term": "sender_name",
+      "type": "property",
+      "schema": "SystemVO",
+      "api": "Delivery Partner API",
+      "description": "The name of the sending system."
+    }
+  ]
+}
