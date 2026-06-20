@@ -6,7 +6,7 @@ description: Australia Post is Australia's primary postal operator, offering a d
   parcel locker and post office location lookup, delivery choice and scheduling, and
   delivery partner event reporting for an integrated end-to-end fulfilment ecosystem.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2026-06-13'
 modified: '2026-06-13'
