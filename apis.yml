@@ -144,7 +144,7 @@ common:
     url: https://auspost.com.au/developers/help-support/how-to-get-credentials/
   - type: Catalog
     url: https://auspost.com.au/developers/api-documentations/
-  - type: SignUp
+  - type: Signup
     url: https://developers.auspost.com.au/apis/pacpcs-registration
   - type: Login
     url: https://developers.auspost.com.au/
