@@ -132,6 +132,12 @@ apis:
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/australia-post/refs/heads/main/openapi/delivery-partner-openapi.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/australia-post-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/australia-post-domain-security.yml
+  - type: Authentication
+    url: authentication/australia-post-authentication.yml
   - type: Website
     url: https://auspost.com.au/
   - type: DeveloperPortal
