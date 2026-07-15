@@ -132,6 +132,8 @@ apis:
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/australia-post/refs/heads/main/openapi/delivery-partner-openapi.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/australia-post-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/australia-post-vulnerability-disclosure.yml
   - type: DomainSecurity
