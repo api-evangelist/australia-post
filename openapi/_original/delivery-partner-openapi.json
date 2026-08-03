@@ -1,0 +1,364 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Delivery Partner API",
+    "description": "This API allows Australia Post partners to submit delivery events to Australia Post.",
+    "version": "1.3.0",
+    "x-short-desc": "An API for Australia Post delivery partners.",
+    "x-api-key": "delivery-partner",
+    "x-gateway-type": "GATEWAY",
+    "x-api-id": "delivery-partner_v1.3.0-rev.5"
+  },
+  "servers": [
+    {
+      "url": "https://digitalapi.auspost.com.au/delivery-partner"
+    }
+  ],
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ],
+  "paths": {
+    "/api/v1/event": {
+      "post": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "Sends the delivery event to Australia Post",
+        "description": "Accepts Tracking Events which have resulted in a notification being sent by a delivery partner and which AP are to be informed of.",
+        "operationId": "event",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventVO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventVO"
+                }
+              }
+            }
+          }
+        },
+        "x-info": {
+          "pathLabel": "Sends the delivery event to Australia Post"
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ArticleVO": {
+        "required": [
+          "article_id"
+        ],
+        "type": "object",
+        "properties": {
+          "article_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string",
+            "description": "The Article Id.",
+            "example": "JQ6378399101"
+          },
+          "full_barcode": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "description": "The Full Barcode."
+          },
+          "external_track_url": {
+            "type": "string",
+            "description": "External tracking url to allow tracking via 3rd party carrier."
+          }
+        },
+        "description": "Article details."
+      },
+      "AttachmentVO": {
+        "required": [
+          "attachment_content",
+          "content_type"
+        ],
+        "type": "object",
+        "properties": {
+          "attachment_content": {
+            "type": "string",
+            "description": "A base64 encoded PNG image of the recipients signature. Restricted to 10240 bytes.",
+            "example": "VGhpcyB3b3VsZCBiZSBhIHNhbXBsZSBQTkcgaW1hZ2UgYmluYXJ5..."
+          },
+          "content_type": {
+            "type": "string",
+            "description": "The type of image format of the attachment content.",
+            "example": "image/png"
+          }
+        },
+        "description": "Image attachments showing details of a delivery (e.g. for damaged article)."
+      },
+      "AuditVO": {
+        "required": [
+          "event_id",
+          "event_source_name"
+        ],
+        "type": "object",
+        "properties": {
+          "event_source_name": {
+            "type": "string",
+            "description": "Event Source Name.",
+            "example": "Doddle"
+          },
+          "event_id": {
+            "type": "string",
+            "description": "Event ID.",
+            "example": "2f445d1d-cbfc-4e3d-a742-ec3dc8f009fa"
+          }
+        },
+        "description": "Audit details."
+      },
+      "DeliveryVO": {
+        "type": "object",
+        "properties": {
+          "destination_postcode": {
+            "maxLength": 4,
+            "minLength": 4,
+            "pattern": "^\\d{4}$",
+            "type": "string",
+            "description": "The 4-digit Australian Postcode to where the article has been sent",
+            "example": "3204"
+          },
+          "proof_of_delivery": {
+            "$ref": "#/components/schemas/ProofOfDeliveryVO"
+          }
+        },
+        "description": "Delivery details."
+      },
+      "EventOriginatorVO": {
+        "required": [
+          "person",
+          "system"
+        ],
+        "type": "object",
+        "properties": {
+          "system": {
+            "$ref": "#/components/schemas/SystemVO"
+          },
+          "person": {
+            "$ref": "#/components/schemas/PersonVO"
+          }
+        },
+        "description": "Details of the System where the event originated."
+      },
+      "EventVO": {
+        "required": [
+          "article",
+          "audit",
+          "event_date_time",
+          "event_originator",
+          "event_reason",
+          "event_type"
+        ],
+        "type": "object",
+        "properties": {
+          "event_type": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "The code indicating which type of event has occurred."
+          },
+          "event_reason": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "Text describing the event type reason.",
+            "example": "Transferred"
+          },
+          "event_reason_text": {
+            "maxLength": 80,
+            "minLength": 0,
+            "type": "string",
+            "description": "Text or comments describing the event reason as entered by user.",
+            "example": "BADLY DAMAGED"
+          },
+          "event_date_time": {
+            "type": "string",
+            "description": "The timestamp indication when the reason occurred in ISO 8601 Offset from UTC format.",
+            "format": "date-time",
+            "example": "2019-07-08T09:04:45+10:00"
+          },
+          "article": {
+            "$ref": "#/components/schemas/ArticleVO"
+          },
+          "audit": {
+            "$ref": "#/components/schemas/AuditVO"
+          },
+          "event_originator": {
+            "$ref": "#/components/schemas/EventOriginatorVO"
+          },
+          "delivery": {
+            "$ref": "#/components/schemas/DeliveryVO"
+          },
+          "facility": {
+            "$ref": "#/components/schemas/FacilityVO"
+          }
+        },
+        "description": "An event originating in a partner's system, which AP is to be informed of."
+      },
+      "FacilityVO": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "$ref": "#/components/schemas/LocationVO"
+          }
+        },
+        "description": "Facility details"
+      },
+      "LocationVO": {
+        "required": [
+          "location_name",
+          "work_centre_code"
+        ],
+        "type": "object",
+        "properties": {
+          "work_centre_code": {
+            "maxLength": 10,
+            "minLength": 1,
+            "type": "string",
+            "description": "Work Centre Code.",
+            "example": "123456"
+          },
+          "location_name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "Location Name.",
+            "example": "ABBOTSFORD"
+          }
+        },
+        "description": "Location details"
+      },
+      "PersonVO": {
+        "required": [
+          "person_id"
+        ],
+        "type": "object",
+        "properties": {
+          "person_id": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "The identifier of the sending person.",
+            "example": "ABBOTSFORD LPO"
+          }
+        },
+        "description": "The person associated with the origin of the event."
+      },
+      "ProofOfDeliveryVO": {
+        "type": "object",
+        "properties": {
+          "signer_name": {
+            "maxLength": 80,
+            "minLength": 1,
+            "type": "string",
+            "description": "The name of the person signing for acceptance of the delivery.",
+            "example": "Don Johnson"
+          },
+          "identification_type": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "The type of ID presented.",
+            "example": "DL"
+          },
+          "receiver_dob": {
+            "type": "string",
+            "description": "The date of birth of the recipient (ddMMyyyy).",
+            "format": "date-time"
+          },
+          "attachment": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttachmentVO"
+            }
+          },
+          "service_actions": {
+            "$ref": "#/components/schemas/ServiceActionsVO"
+          }
+        },
+        "description": "The details of the delivery."
+      },
+      "ServiceActionsVO": {
+        "type": "object",
+        "properties": {
+          "type_id": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "description": "The type of ID presented. Valid types are: Australian Driver License,Red or Orange MyPost card with address, Keypass or other Government-issued Proof of Age card, Australian or international passport, Digital iD."
+          },
+          "id_available": {
+            "pattern": "X|N",
+            "type": "string",
+            "description": "Was ID of the receiver made available at the time of delivery?",
+            "example": "X"
+          },
+          "sight_id": {
+            "pattern": "X|N",
+            "type": "string",
+            "description": "Was ID of the receiver sighted by the person making the delivery?",
+            "example": "X"
+          },
+          "over_18": {
+            "pattern": "X|N",
+            "type": "string",
+            "description": "Was the recipient over 18? Relevant where the Service Code on the manifest is one of 81, 82, 83.",
+            "example": "X"
+          }
+        },
+        "description": "Elements relating to the specific Product Service Codes, e.g. Service Codes 81, 82 and 83 are for alcohol and require ID to be presented in some Australian States"
+      },
+      "SystemVO": {
+        "required": [
+          "sender_id",
+          "sender_name"
+        ],
+        "type": "object",
+        "properties": {
+          "sender_id": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "The identifier of the sending system.",
+            "example": "DODDLE"
+          },
+          "sender_name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "The name of the sending system.",
+            "example": "Doddle"
+          }
+        },
+        "description": "The System where the event originated."
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "AUTH-KEY",
+        "in": "header"
+      }
+    }
+  },
+  "x-categories": [
+    "Other"
+  ]
+}

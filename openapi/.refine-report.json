@@ -1,0 +1,14 @@
+{
+  "provider": "australia-post",
+  "sources": [
+    "australia-post-endpoints-api-openapi.yml"
+  ],
+  "outputs": [
+    "australia-post-endpoints-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
