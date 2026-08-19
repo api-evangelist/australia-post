@@ -1,0 +1,1154 @@
+{
+  "item": [
+    {
+      "id": "1ed5d4aa-4bde-4918-9079-c7507a078443",
+      "name": "Endpoints",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "db4eb2e5-4992-4b35-9388-fd4d313d7705",
+          "name": "Sends the delivery event to Australia Post",
+          "request": {
+            "name": "Sends the delivery event to Australia Post",
+            "description": {
+              "content": "Accepts Tracking Events which have resulted in a notification being sent by a delivery partner and which AP are to be informed of.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "event"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"article\": {\n    \"article_id\": \"<string>\",\n    \"full_barcode\": \"<string>\",\n    \"external_track_url\": \"<string>\"\n  },\n  \"audit\": {\n    \"event_id\": \"<string>\",\n    \"event_source_name\": \"<string>\"\n  },\n  \"event_date_time\": \"<dateTime>\",\n  \"event_originator\": {\n    \"person\": {\n      \"person_id\": \"<string>\"\n    },\n    \"system\": {\n      \"sender_id\": \"<string>\",\n      \"sender_name\": \"<string>\"\n    }\n  },\n  \"event_reason\": \"<string>\",\n  \"event_type\": \"<string>\",\n  \"event_reason_text\": \"<string>\",\n  \"delivery\": {\n    \"destination_postcode\": \"<string>\",\n    \"proof_of_delivery\": {\n      \"signer_name\": \"<string>\",\n      \"identification_type\": \"<string>\",\n      \"receiver_dob\": \"<dateTime>\",\n      \"attachment\": [\n        {\n          \"attachment_content\": \"<string>\",\n          \"content_type\": \"<string>\"\n        },\n        {\n          \"attachment_content\": \"<string>\",\n          \"content_type\": \"<string>\"\n        }\n      ],\n      \"service_actions\": {\n        \"type_id\": \"<string>\",\n        \"id_available\": \"<string>\",\n        \"sight_id\": \"<string>\",\n        \"over_18\": \"<string>\"\n      }\n    }\n  },\n  \"facility\": {\n    \"location\": {\n      \"location_name\": \"<string>\",\n      \"work_centre_code\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e841c5a3-e592-4d94-8edb-b1c5265d1484",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "event"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "AUTH-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"article\": {\n    \"article_id\": \"JQ6378399101\",\n    \"full_barcode\": \"<string>\",\n    \"external_track_url\": \"<string>\"\n  },\n  \"audit\": {\n    \"event_id\": \"2f445d1d-cbfc-4e3d-a742-ec3dc8f009fa\",\n    \"event_source_name\": \"Doddle\"\n  },\n  \"event_date_time\": \"2019-07-08T09:04:45+10:00\",\n  \"event_originator\": {\n    \"person\": {\n      \"person_id\": \"ABBOTSFORD LPO\"\n    },\n    \"system\": {\n      \"sender_id\": \"DODDLE\",\n      \"sender_name\": \"Doddle\"\n    }\n  },\n  \"event_reason\": \"Transferred\",\n  \"event_type\": \"<string>\",\n  \"event_reason_text\": \"BADLY DAMAGED\",\n  \"delivery\": {\n    \"destination_postcode\": \"3204\",\n    \"proof_of_delivery\": {\n      \"signer_name\": \"Don Johnson\",\n      \"identification_type\": \"DL\",\n      \"receiver_dob\": \"<dateTime>\",\n      \"attachment\": [\n        {\n          \"attachment_content\": \"VGhpcyB3b3VsZCBiZSBhIHNhbXBsZSBQTkcgaW1hZ2UgYmluYXJ5...\",\n          \"content_type\": \"image/png\"\n        },\n        {\n          \"attachment_content\": \"VGhpcyB3b3VsZCBiZSBhIHNhbXBsZSBQTkcgaW1hZ2UgYmluYXJ5...\",\n          \"content_type\": \"image/png\"\n        }\n      ],\n      \"service_actions\": {\n        \"type_id\": \"<string>\",\n        \"id_available\": \"X\",\n        \"sight_id\": \"X\",\n        \"over_18\": \"X\"\n      }\n    }\n  },\n  \"facility\": {\n    \"location\": {\n      \"location_name\": \"ABBOTSFORD\",\n      \"work_centre_code\": \"123456\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"article\": {\n    \"article_id\": \"JQ6378399101\",\n    \"full_barcode\": \"<string>\",\n    \"external_track_url\": \"<string>\"\n  },\n  \"audit\": {\n    \"event_id\": \"2f445d1d-cbfc-4e3d-a742-ec3dc8f009fa\",\n    \"event_source_name\": \"Doddle\"\n  },\n  \"event_date_time\": \"2019-07-08T09:04:45+10:00\",\n  \"event_originator\": {\n    \"person\": {\n      \"person_id\": \"ABBOTSFORD LPO\"\n    },\n    \"system\": {\n      \"sender_id\": \"DODDLE\",\n      \"sender_name\": \"Doddle\"\n    }\n  },\n  \"event_reason\": \"Transferred\",\n  \"event_type\": \"<string>\",\n  \"event_reason_text\": \"BADLY DAMAGED\",\n  \"delivery\": {\n    \"destination_postcode\": \"3204\",\n    \"proof_of_delivery\": {\n      \"signer_name\": \"Don Johnson\",\n      \"identification_type\": \"DL\",\n      \"receiver_dob\": \"<dateTime>\",\n      \"attachment\": [\n        {\n          \"attachment_content\": \"VGhpcyB3b3VsZCBiZSBhIHNhbXBsZSBQTkcgaW1hZ2UgYmluYXJ5...\",\n          \"content_type\": \"image/png\"\n        },\n        {\n          \"attachment_content\": \"VGhpcyB3b3VsZCBiZSBhIHNhbXBsZSBQTkcgaW1hZ2UgYmluYXJ5...\",\n          \"content_type\": \"image/png\"\n        }\n      ],\n      \"service_actions\": {\n        \"type_id\": \"<string>\",\n        \"id_available\": \"X\",\n        \"sight_id\": \"X\",\n        \"over_18\": \"X\"\n      }\n    }\n  },\n  \"facility\": {\n    \"location\": {\n      \"location_name\": \"ABBOTSFORD\",\n      \"work_centre_code\": \"123456\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "72e5f072-1dc1-41da-89ac-e651a77c72b4",
+          "name": "getPointsByPostcode",
+          "request": {
+            "name": "getPointsByPostcode",
+            "description": {
+              "content": "This endpoint returns a list of all Australia Post points within a specific post code area. You can filter your results using the types parameter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "points",
+                "postcode",
+                ":postcode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pc",
+                  "value": "<string>",
+                  "description": "A partner code identifies an entity that owns location data. Currently we offer access only to Australia Post outlet and services data. In the future we may expand this to include location data from partner providers. **Note:** If this field is left empty, the default value is \"AP\". Submitting any other value will return an empty data set."
+                },
+                {
+                  "disabled": false,
+                  "key": "usage_types",
+                  "value": "<string>",
+                  "description": "The usage_types parameter is an optional comma-separated string used to filter locations by its usage type. The filter works as an OR condition, meaning locations matching any of the specified values will be returned. If omitted, all locations will be returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "types",
+                  "value": "<string>",
+                  "description": "The types parameter is an optional string of comma-delimited values denoting which outlets and facilities you want to locate. There are six of these enumerated values, all of which are selected by default: \n * UPL: Parcel lockers. \n * R_SPB: A red street post box. \n * C_SPB: Combined street post boxes (Both red and yellow boxes together). \n * PO: An Australia Post outlet. \n * OS: Outstation (These are a part of a post office not in the same physical building. For example, a separate building dedicated to PO boxes.) \n * DC: A delivery centre."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "postcode",
+                  "description": "(Required) A four-digit Australian postcode."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "81d0b170-99da-4479-b29e-9f490e376759",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "points",
+                    "postcode",
+                    ":postcode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "usage_types",
+                      "value": "1,2"
+                    },
+                    {
+                      "key": "types",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "postcode",
+                      "description": "(Required) A four-digit Australian postcode."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "AUTH-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"points\": [\n    {\n      \"location_code\": \"350748_PO\",\n      \"partner_code\": \"AP\",\n      \"name\": \"MELBOURNE GPO POST SHOP\",\n      \"type\": \"PO\",\n      \"description\": \"Post Office\",\n      \"phone_number\": \"13 13 18\",\n      \"fax_number\": \"(03)9203 3040\",\n      \"address\": {\n        \"address_line_1\": \"The Strand\",\n        \"address_line_2\": \"Shop 1 250 Elizabeth Street\",\n        \"suburb\": \"Melbourne\",\n        \"state\": \"VIC\",\n        \"postcode\": \"3000\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AUS\"\n      },\n      \"geo_location\": {\n        \"lat\": -37.812679,\n        \"lon\": 144.962732\n      },\n      \"delivery_point_id\": 34038295,\n      \"work_centre_id\": 350748,\n      \"hatch_description\": \"In the PO Box Suite\",\n      \"service_codes\": [\n        \"108\",\n        \"9\",\n        \"33\",\n        \"17\",\n        \"6\"\n      ],\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        }\n      ]\n    },\n    {\n      \"location_code\": \"63258302_UPL\",\n      \"partner_code\": \"AP\",\n      \"name\": \"Brisbane General Post Office Pcl Lkrs\",\n      \"type\": \"UPL\",\n      \"directions\": \"Parcel Locker is in 24/7 is area of Post Office Lane  between Queen and Elizabeth Streets.\",\n      \"description\": \"Available 24/7\",\n      \"address\": {\n        \"address_line_1\": \"261 Queen Street\",\n        \"suburb\": \"BRISBANE\",\n        \"state\": \"QLD\",\n        \"postcode\": \"4000\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -27.468025,\n        \"lon\": 153.0281571\n      },\n      \"delivery_point_id\": 63258302,\n      \"work_centre_id\": 430553,\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"2\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"3\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"4\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"5\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"6\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        }\n      ],\n      \"usage_type\": \"1\",\n      \"service_codes\": []\n    },\n    {\n      \"location_code\": \"RED0015373\",\n      \"partner_code\": \"AP\",\n      \"type\": \"R_SPB\",\n      \"address\": {\n        \"address_line_1\": \"61 Main Road\",\n        \"suburb\": \"PERTH\",\n        \"state\": \"TAS\",\n        \"postcode\": \"7300\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -41.576119,\n        \"lon\": 147.17379\n      },\n      \"work_centre_id\": 736042,\n      \"hours\": [],\n      \"service_codes\": []\n    },\n    {\n      \"location_code\": \"RED0000480\",\n      \"partner_code\": \"AP\",\n      \"type\": \"C_SPB\",\n      \"address\": {\n        \"address_line_1\": \"River Side Off Mill Point Road\",\n        \"address_line_2\": \"16 Mends Street\",\n        \"suburb\": \"SOUTH PERTH\",\n        \"state\": \"WA\",\n        \"postcode\": \"6151\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -31.97262,\n        \"lon\": 115.852525\n      },\n      \"hours\": [],\n      \"service_codes\": []\n    },\n    {\n      \"location_code\": \"221356_OS\",\n      \"partner_code\": \"AP\",\n      \"name\": \"ACU CANBERRA PO BOX ANNEXE\",\n      \"type\": \"OS\",\n      \"description\": \"ACU CANBERRA PO BOX ANNEXE\",\n      \"address\": {\n        \"address_line_1\": \"223 Antill Street\",\n        \"suburb\": \"WATSON\",\n        \"state\": \"ACT\",\n        \"postcode\": \"2602\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -35.246284,\n        \"lon\": 149.15599\n      },\n      \"work_centre_id\": 221356,\n      \"hours\": [],\n      \"service_codes\": [\n        \"6\",\n        \"7\"\n      ]\n    },\n    {\n      \"location_code\": \"416153_DC\",\n      \"partner_code\": \"AP\",\n      \"name\": \"YATALA DC\",\n      \"type\": \"DC\",\n      \"description\": \"Delivery Centre\",\n      \"phone_number\": \"13 13 18\",\n      \"fax_number\": \"(07)3011 4084\",\n      \"address\": {\n        \"address_line_1\": \"3 Binary Street\",\n        \"suburb\": \"YATALA\",\n        \"state\": \"QLD\",\n        \"postcode\": \"4207\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -27.758184,\n        \"lon\": 153.239131\n      },\n      \"delivery_point_id\": 36010322,\n      \"work_centre_id\": 416153,\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"2\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"3\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"4\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        }\n      ],\n      \"service_codes\": [\n        \"3\",\n        \"7\",\n        \"99\",\n        \"6\",\n        \"95\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0613b654-0b2e-4e69-a01e-27a10675467f",
+          "name": "getPointsByWorkCenterID",
+          "request": {
+            "name": "getPointsByWorkCenterID",
+            "description": {
+              "content": "This endpoint returns a list of all points associated with a specific Australia Post work centre's. You can filter your results using the types parameter. \n \n A work center is a unique numeric identification code that represents a parent Australia Post facility, and all of the child point objects (assets or facilities) associated with it. The facility and its point objects all share the same work_centre_id, but each point is unique.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "points",
+                "workcentres",
+                ":work_centre_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pc",
+                  "value": "<string>",
+                  "description": "A partner code identifies an entity that owns location data. Currently we offer access only to Australia Post outlet and services data. In the future we may expand this to include location data from partner providers. **Note:** If this field is left empty, the default value is \"AP\". Submitting any other value will return an empty data set."
+                },
+                {
+                  "disabled": false,
+                  "key": "usage_types",
+                  "value": "<string>",
+                  "description": "The usage_types parameter is an optional comma-separated string used to filter locations by its usage type. The filter works as an OR condition, meaning locations matching any of the specified values will be returned. If omitted, all locations will be returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "types",
+                  "value": "<string>",
+                  "description": "The types parameter is an optional string of comma-delimited values denoting which outlets and facilities you want to locate. There are six of these enumerated values, all of which are selected by default: \n * UPL: Parcel lockers. \n * R_SPB: A red street post box. \n * C_SPB: Combined street post boxes (Both red and yellow boxes together). \n * PO: An Australia Post outlet. \n * OS: Outstation (These are a part of a post office not in the same physical building. For example, a separate building dedicated to PO boxes.) \n * DC: A delivery centre."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "work_centre_id",
+                  "description": "(Required) See the endpoint description above."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8bc71411-e201-472c-b7e5-50402ea90764",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "points",
+                    "workcentres",
+                    ":work_centre_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "usage_types",
+                      "value": "1,2"
+                    },
+                    {
+                      "key": "types",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "work_centre_id",
+                      "description": "(Required) See the endpoint description above."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "AUTH-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"points\": [\n    {\n      \"location_code\": \"350748_PO\",\n      \"partner_code\": \"AP\",\n      \"name\": \"MELBOURNE GPO POST SHOP\",\n      \"type\": \"PO\",\n      \"description\": \"Post Office\",\n      \"phone_number\": \"13 13 18\",\n      \"fax_number\": \"(03)9203 3040\",\n      \"address\": {\n        \"address_line_1\": \"The Strand\",\n        \"address_line_2\": \"Shop 1 250 Elizabeth Street\",\n        \"suburb\": \"Melbourne\",\n        \"state\": \"VIC\",\n        \"postcode\": \"3000\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AUS\"\n      },\n      \"geo_location\": {\n        \"lat\": -37.812679,\n        \"lon\": 144.962732\n      },\n      \"delivery_point_id\": 34038295,\n      \"work_centre_id\": 350748,\n      \"hatch_description\": \"In the PO Box Suite\",\n      \"service_codes\": [\n        \"108\",\n        \"9\",\n        \"33\",\n        \"17\",\n        \"6\"\n      ],\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        }\n      ]\n    },\n    {\n      \"location_code\": \"63258302_UPL\",\n      \"partner_code\": \"AP\",\n      \"name\": \"Brisbane General Post Office Pcl Lkrs\",\n      \"type\": \"UPL\",\n      \"directions\": \"Parcel Locker is in 24/7 is area of Post Office Lane  between Queen and Elizabeth Streets.\",\n      \"description\": \"Available 24/7\",\n      \"address\": {\n        \"address_line_1\": \"261 Queen Street\",\n        \"suburb\": \"BRISBANE\",\n        \"state\": \"QLD\",\n        \"postcode\": \"4000\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -27.468025,\n        \"lon\": 153.0281571\n      },\n      \"delivery_point_id\": 63258302,\n      \"work_centre_id\": 430553,\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"2\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"3\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"4\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"5\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"6\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        }\n      ],\n      \"usage_type\": \"1\",\n      \"service_codes\": []\n    },\n    {\n      \"location_code\": \"RED0015373\",\n      \"partner_code\": \"AP\",\n      \"type\": \"R_SPB\",\n      \"address\": {\n        \"address_line_1\": \"61 Main Road\",\n        \"suburb\": \"PERTH\",\n        \"state\": \"TAS\",\n        \"postcode\": \"7300\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -41.576119,\n        \"lon\": 147.17379\n      },\n      \"work_centre_id\": 736042,\n      \"hours\": [],\n      \"service_codes\": []\n    },\n    {\n      \"location_code\": \"RED0000480\",\n      \"partner_code\": \"AP\",\n      \"type\": \"C_SPB\",\n      \"address\": {\n        \"address_line_1\": \"River Side Off Mill Point Road\",\n        \"address_line_2\": \"16 Mends Street\",\n        \"suburb\": \"SOUTH PERTH\",\n        \"state\": \"WA\",\n        \"postcode\": \"6151\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -31.97262,\n        \"lon\": 115.852525\n      },\n      \"hours\": [],\n      \"service_codes\": []\n    },\n    {\n      \"location_code\": \"221356_OS\",\n      \"partner_code\": \"AP\",\n      \"name\": \"ACU CANBERRA PO BOX ANNEXE\",\n      \"type\": \"OS\",\n      \"description\": \"ACU CANBERRA PO BOX ANNEXE\",\n      \"address\": {\n        \"address_line_1\": \"223 Antill Street\",\n        \"suburb\": \"WATSON\",\n        \"state\": \"ACT\",\n        \"postcode\": \"2602\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -35.246284,\n        \"lon\": 149.15599\n      },\n      \"work_centre_id\": 221356,\n      \"hours\": [],\n      \"service_codes\": [\n        \"6\",\n        \"7\"\n      ]\n    },\n    {\n      \"location_code\": \"416153_DC\",\n      \"partner_code\": \"AP\",\n      \"name\": \"YATALA DC\",\n      \"type\": \"DC\",\n      \"description\": \"Delivery Centre\",\n      \"phone_number\": \"13 13 18\",\n      \"fax_number\": \"(07)3011 4084\",\n      \"address\": {\n        \"address_line_1\": \"3 Binary Street\",\n        \"suburb\": \"YATALA\",\n        \"state\": \"QLD\",\n        \"postcode\": \"4207\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -27.758184,\n        \"lon\": 153.239131\n      },\n      \"delivery_point_id\": 36010322,\n      \"work_centre_id\": 416153,\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"2\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"3\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"4\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        }\n      ],\n      \"service_codes\": [\n        \"3\",\n        \"7\",\n        \"99\",\n        \"6\",\n        \"95\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f2039ebe-14ef-4a56-a9a6-fcd04ca201aa",
+          "name": "getPointsByDeliveryPointId",
+          "request": {
+            "name": "getPointsByDeliveryPointId",
+            "description": {
+              "content": "This endpoint returns a list of all points associated with a specific Australia Post delivery_point_id. You can filter your results using the types parameter. A delivery_point_id is a unique numeric identification code that represents a point to which Australia Post delivers or receives deliveries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "points",
+                "deliverypoints",
+                ":delivery_point_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pc",
+                  "value": "<string>",
+                  "description": "A partner code identifies an entity that owns location data. Currently we offer access only to Australia Post outlet and services data. In the future we may expand this to include location data from partner providers. **Note:** If this field is left empty, the default value is \"AP\". Submitting any other value will return an empty data set."
+                },
+                {
+                  "disabled": false,
+                  "key": "usage_types",
+                  "value": "<string>",
+                  "description": "The usage_types parameter is an optional comma-separated string used to filter locations by its usage type. The filter works as an OR condition, meaning locations matching any of the specified values will be returned. If omitted, all locations will be returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "types",
+                  "value": "<string>",
+                  "description": "The types parameter is an optional string of comma-delimited values denoting which outlets and facilities you want to locate. There are six of these enumerated values, all of which are selected by default: \n * UPL: Parcel lockers. \n * R_SPB: A red street post box. \n * C_SPB: Combined street post boxes (Both red and yellow boxes together). \n * PO: An Australia Post outlet. \n * OS: Outstation (These are a part of a post office not in the same physical building. For example, a separate building dedicated to PO boxes.) \n * DC: A delivery centre."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "delivery_point_id",
+                  "description": "(Required) See the endpoint description above."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b6d80c1-9036-4573-af78-9cc1fe30c441",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "points",
+                    "deliverypoints",
+                    ":delivery_point_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "usage_types",
+                      "value": "1,2"
+                    },
+                    {
+                      "key": "types",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delivery_point_id",
+                      "description": "(Required) See the endpoint description above."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "AUTH-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"points\": [\n    {\n      \"location_code\": \"350748_PO\",\n      \"partner_code\": \"AP\",\n      \"name\": \"MELBOURNE GPO POST SHOP\",\n      \"type\": \"PO\",\n      \"description\": \"Post Office\",\n      \"phone_number\": \"13 13 18\",\n      \"fax_number\": \"(03)9203 3040\",\n      \"address\": {\n        \"address_line_1\": \"The Strand\",\n        \"address_line_2\": \"Shop 1 250 Elizabeth Street\",\n        \"suburb\": \"Melbourne\",\n        \"state\": \"VIC\",\n        \"postcode\": \"3000\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AUS\"\n      },\n      \"geo_location\": {\n        \"lat\": -37.812679,\n        \"lon\": 144.962732\n      },\n      \"delivery_point_id\": 34038295,\n      \"work_centre_id\": 350748,\n      \"hatch_description\": \"In the PO Box Suite\",\n      \"service_codes\": [\n        \"108\",\n        \"9\",\n        \"33\",\n        \"17\",\n        \"6\"\n      ],\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a8d017d-defa-4800-8f30-676be0219933",
+          "name": "getPointsByLocationCode",
+          "request": {
+            "name": "getPointsByLocationCode",
+            "description": {
+              "content": "This endpoint returns a list of all points associated with a specific Australia Post location_code. A location_code is a unique alphanumeric identification code that represents an Australia Post facility.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "points",
+                ":location_code"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pc",
+                  "value": "<string>",
+                  "description": "A partner code identifies an entity that owns location data. Currently we offer access only to Australia Post outlet and services data. In the future we may expand this to include location data from partner providers. **Note:** If this field is left empty, the default value is \"AP\". Submitting any other value will return an empty data set."
+                },
+                {
+                  "disabled": false,
+                  "key": "usage_types",
+                  "value": "<string>",
+                  "description": "The usage_types parameter is an optional comma-separated string used to filter locations by its usage type. The filter works as an OR condition, meaning locations matching any of the specified values will be returned. If omitted, all locations will be returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location_code",
+                  "description": "(Required) See the endpoint description above."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4296c3f6-0a43-4e18-bebd-20c833032b96",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "points",
+                    ":location_code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "usage_types",
+                      "value": "1,2"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location_code",
+                      "description": "(Required) See the endpoint description above."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "AUTH-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"points\": [\n    {\n      \"location_code\": \"350748_PO\",\n      \"partner_code\": \"AP\",\n      \"name\": \"MELBOURNE GPO POST SHOP\",\n      \"type\": \"PO\",\n      \"description\": \"Post Office\",\n      \"phone_number\": \"13 13 18\",\n      \"fax_number\": \"(03)9203 3040\",\n      \"address\": {\n        \"address_line_1\": \"The Strand\",\n        \"address_line_2\": \"Shop 1 250 Elizabeth Street\",\n        \"suburb\": \"Melbourne\",\n        \"state\": \"VIC\",\n        \"postcode\": \"3000\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AUS\"\n      },\n      \"geo_location\": {\n        \"lat\": -37.812679,\n        \"lon\": 144.962732\n      },\n      \"delivery_point_id\": 34038295,\n      \"work_centre_id\": 350748,\n      \"hatch_description\": \"In the PO Box Suite\",\n      \"service_codes\": [\n        \"108\",\n        \"9\",\n        \"33\",\n        \"17\",\n        \"6\"\n      ],\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79fd32a7-67d9-48ac-97e5-c5ffd95942b5",
+          "name": "getPointsByType",
+          "request": {
+            "name": "getPointsByType",
+            "description": {
+              "content": "This endpoint returns a list of all points associated with a specific Australia Post point_type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "points",
+                "type",
+                ":points_type"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pc",
+                  "value": "<string>",
+                  "description": "A partner code identifies an entity that owns location data. Currently we offer access only to Australia Post outlet and services data. In the future we may expand this to include location data from partner providers. **Note:** If this field is left empty, the default value is \"AP\". Submitting any other value will return an empty data set."
+                },
+                {
+                  "disabled": false,
+                  "key": "usage_types",
+                  "value": "<string>",
+                  "description": "The usage_types parameter is an optional comma-separated string used to filter locations by its usage type. The filter works as an OR condition, meaning locations matching any of the specified values will be returned. If omitted, all locations will be returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "points_type",
+                  "description": "(Required) The point's type. There are six of these enumerated values, to select from: \n * UPL: Parcel lockers. \n * R_SPB: A red street post box. \n * C_SPB: Combined street post boxes (Both red and yellow boxes together). \n * PO: An Australia Post outlet. \n * OS: Outstation (These are a part of a post office not in the same physical building. For example, a separate building dedicated to PO boxes.) \n * DC: A delivery centre."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea26aaa8-c015-4175-b083-787b9feb1569",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "points",
+                    "type",
+                    ":points_type"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "usage_types",
+                      "value": "1,2"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "points_type",
+                      "description": "(Required) The point's type. There are six of these enumerated values, to select from: \n * UPL: Parcel lockers. \n * R_SPB: A red street post box. \n * C_SPB: Combined street post boxes (Both red and yellow boxes together). \n * PO: An Australia Post outlet. \n * OS: Outstation (These are a part of a post office not in the same physical building. For example, a separate building dedicated to PO boxes.) \n * DC: A delivery centre."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "AUTH-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"points\": [\n    {\n      \"location_code\": \"350748_PO\",\n      \"partner_code\": \"AP\",\n      \"name\": \"MELBOURNE GPO POST SHOP\",\n      \"type\": \"PO\",\n      \"description\": \"Post Office\",\n      \"phone_number\": \"13 13 18\",\n      \"fax_number\": \"(03)9203 3040\",\n      \"address\": {\n        \"address_line_1\": \"The Strand\",\n        \"address_line_2\": \"Shop 1 250 Elizabeth Street\",\n        \"suburb\": \"Melbourne\",\n        \"state\": \"VIC\",\n        \"postcode\": \"3000\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AUS\"\n      },\n      \"geo_location\": {\n        \"lat\": -37.812679,\n        \"lon\": 144.962732\n      },\n      \"delivery_point_id\": 34038295,\n      \"work_centre_id\": 350748,\n      \"hatch_description\": \"In the PO Box Suite\",\n      \"service_codes\": [\n        \"108\",\n        \"9\",\n        \"33\",\n        \"17\",\n        \"6\"\n      ],\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fdb25c62-e5e6-4072-bb81-c32ebe2c7871",
+          "name": "getPointsByGeoCoordinates",
+          "request": {
+            "name": "getPointsByGeoCoordinates",
+            "description": {
+              "content": "This endpoint returns a list of all Australia Post points within a given range of the coordinates provided. Results are ordered by the distance field, from closest to farthest away. You can filter your results using the various parameters shown below.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "points",
+                "geo",
+                ":longitude",
+                ":latitude"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pc",
+                  "value": "<string>",
+                  "description": "A partner code identifies an entity that owns location data. Currently we offer access only to Australia Post outlet and services data. In the future we may expand this to include location data from partner providers. **Note:** If this field is left empty, the default value is \"AP\". Submitting any other value will return an empty data set."
+                },
+                {
+                  "disabled": false,
+                  "key": "usage_types",
+                  "value": "<string>",
+                  "description": "The usage_types parameter is an optional comma-separated string used to filter locations by its usage type. The filter works as an OR condition, meaning locations matching any of the specified values will be returned. If omitted, all locations will be returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "radius",
+                  "value": "<integer>",
+                  "description": "The radius in kilometres, to search around the provided latitude/longitude coordinate point. The default value is 50, and the hard limit is 1000Km."
+                },
+                {
+                  "disabled": false,
+                  "key": "services",
+                  "value": "<string>",
+                  "description": "A comma-delimited string of service codes by which to filter the returned list of matching locations. **Note: ** A list of current services is available through the getServices endpoint."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "The maximum number of results to return. The default value is 5."
+                },
+                {
+                  "disabled": false,
+                  "key": "types",
+                  "value": "<string>",
+                  "description": "The types parameter is an optional string of comma-delimited values denoting which outlets and facilities you want to locate. There are six of these enumerated values, all of which are selected by default: \n * UPL: Parcel lockers. \n * R_SPB: A red street post box. \n * C_SPB: Combined street post boxes (Both red and yellow boxes together). \n * PO: An Australia Post outlet. \n * OS: Outstation (These are a part of a post office not in the same physical building. For example, a separate building dedicated to PO boxes.) \n * DC: A delivery centre."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "longitude",
+                  "description": "(Required) A coordinate representing the angular distance in degrees, minutes and seconds, of a point east or west of the Greenwich Meridian, expressed as a double."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "latitude",
+                  "description": "(Required) A coordinate representing the angular distance in degrees, minutes and seconds, of a point north or south of the equator, expressed as a double."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "da9709d6-cb22-42c7-ad39-55d5c9884c0e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "points",
+                    "geo",
+                    ":longitude",
+                    ":latitude"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "usage_types",
+                      "value": "1,2"
+                    },
+                    {
+                      "key": "radius",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "services",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "types",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "longitude",
+                      "description": "(Required) A coordinate representing the angular distance in degrees, minutes and seconds, of a point east or west of the Greenwich Meridian, expressed as a double."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "latitude",
+                      "description": "(Required) A coordinate representing the angular distance in degrees, minutes and seconds, of a point north or south of the equator, expressed as a double."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "AUTH-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"points\": [\n    {\n      \"location_code\": \"350748_PO\",\n      \"partner_code\": \"AP\",\n      \"name\": \"MELBOURNE GPO POST SHOP\",\n      \"type\": \"PO\",\n      \"description\": \"Post Office\",\n      \"phone_number\": \"13 13 18\",\n      \"fax_number\": \"(03)9203 3040\",\n      \"address\": {\n        \"address_line_1\": \"The Strand\",\n        \"address_line_2\": \"Shop 1 250 Elizabeth Street\",\n        \"suburb\": \"Melbourne\",\n        \"state\": \"VIC\",\n        \"postcode\": \"3000\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AUS\"\n      },\n      \"geo_location\": {\n        \"lat\": -37.812679,\n        \"lon\": 144.962732\n      },\n      \"delivery_point_id\": 34038295,\n      \"work_centre_id\": 350748,\n      \"hatch_description\": \"In the PO Box Suite\",\n      \"service_codes\": [\n        \"108\",\n        \"9\",\n        \"33\",\n        \"17\",\n        \"6\"\n      ],\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"09:00\",\n          \"end_time\": \"17:00\"\n        }\n      ]\n    },\n    {\n      \"location_code\": \"63258302_UPL\",\n      \"partner_code\": \"AP\",\n      \"name\": \"Brisbane General Post Office Pcl Lkrs\",\n      \"type\": \"UPL\",\n      \"directions\": \"Parcel Locker is in 24/7 is area of Post Office Lane  between Queen and Elizabeth Streets.\",\n      \"description\": \"Available 24/7\",\n      \"address\": {\n        \"address_line_1\": \"261 Queen Street\",\n        \"suburb\": \"BRISBANE\",\n        \"state\": \"QLD\",\n        \"postcode\": \"4000\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -27.468025,\n        \"lon\": 153.0281571\n      },\n      \"delivery_point_id\": 63258302,\n      \"work_centre_id\": 430553,\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"2\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"3\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"4\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"5\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"6\",\n          \"start_time\": \"00:00\",\n          \"end_time\": \"23:59:59\"\n        }\n      ],\n      \"usage_type\": \"1\",\n      \"service_codes\": []\n    },\n    {\n      \"location_code\": \"RED0015373\",\n      \"partner_code\": \"AP\",\n      \"type\": \"R_SPB\",\n      \"address\": {\n        \"address_line_1\": \"61 Main Road\",\n        \"suburb\": \"PERTH\",\n        \"state\": \"TAS\",\n        \"postcode\": \"7300\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -41.576119,\n        \"lon\": 147.17379\n      },\n      \"work_centre_id\": 736042,\n      \"hours\": [],\n      \"service_codes\": []\n    },\n    {\n      \"location_code\": \"RED0000480\",\n      \"partner_code\": \"AP\",\n      \"type\": \"C_SPB\",\n      \"address\": {\n        \"address_line_1\": \"River Side Off Mill Point Road\",\n        \"address_line_2\": \"16 Mends Street\",\n        \"suburb\": \"SOUTH PERTH\",\n        \"state\": \"WA\",\n        \"postcode\": \"6151\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -31.97262,\n        \"lon\": 115.852525\n      },\n      \"hours\": [],\n      \"service_codes\": []\n    },\n    {\n      \"location_code\": \"221356_OS\",\n      \"partner_code\": \"AP\",\n      \"name\": \"ACU CANBERRA PO BOX ANNEXE\",\n      \"type\": \"OS\",\n      \"description\": \"ACU CANBERRA PO BOX ANNEXE\",\n      \"address\": {\n        \"address_line_1\": \"223 Antill Street\",\n        \"suburb\": \"WATSON\",\n        \"state\": \"ACT\",\n        \"postcode\": \"2602\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -35.246284,\n        \"lon\": 149.15599\n      },\n      \"work_centre_id\": 221356,\n      \"hours\": [],\n      \"service_codes\": [\n        \"6\",\n        \"7\"\n      ]\n    },\n    {\n      \"location_code\": \"416153_DC\",\n      \"partner_code\": \"AP\",\n      \"name\": \"YATALA DC\",\n      \"type\": \"DC\",\n      \"description\": \"Delivery Centre\",\n      \"phone_number\": \"13 13 18\",\n      \"fax_number\": \"(07)3011 4084\",\n      \"address\": {\n        \"address_line_1\": \"3 Binary Street\",\n        \"suburb\": \"YATALA\",\n        \"state\": \"QLD\",\n        \"postcode\": \"4207\",\n        \"country_name\": \"Australia\",\n        \"country_code\": \"AU\"\n      },\n      \"geo_location\": {\n        \"lat\": -27.758184,\n        \"lon\": 153.239131\n      },\n      \"delivery_point_id\": 36010322,\n      \"work_centre_id\": 416153,\n      \"hours\": [\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"0\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"1\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"2\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"3\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        },\n        {\n          \"type\": \"HOURS\",\n          \"weekday\": \"4\",\n          \"start_time\": \"06:00\",\n          \"end_time\": \"17:00\"\n        }\n      ],\n      \"service_codes\": [\n        \"3\",\n        \"7\",\n        \"99\",\n        \"6\",\n        \"95\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "25099f30-6e1c-4bf2-9b0f-50c3519189b6",
+          "name": "getServices",
+          "request": {
+            "name": "getServices",
+            "description": {
+              "content": "This endpoint returns a list of all available services. The service code in each returned service object can be passed as a parameter when calling getServicesByServiceCodes or getPointsByGeoCoordinates endpoints.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pc",
+                  "value": "<string>",
+                  "description": "A partner code identifies an entity that owns location data. Currently we offer access only to Australia Post outlet and services data. In the future we may expand this to include location data from partner providers. **Note:** If this field is left empty, the default value is \"AP\". Submitting any other value will return an empty data set."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "df705637-5d8e-4431-961c-968bd82c7eb7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "AUTH-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"services\": [\n    {\n      \"service_code\": 1,\n      \"partner_code\": \"AP\",\n      \"name\": \"parcel-pickup-outside-standard-hours\",\n      \"description\": \"Parcel collection outside standard hours\",\n      \"appointment_required\": false,\n      \"searchable\": false,\n      \"url_name\": \"parcel-pickup-outside-standard-hours\",\n      \"categories\": [\n        {\n          \"name\": \"opening_hours\",\n          \"description\": \"Opening hours\"\n        },\n        {\n          \"name\": \"parcels_mail\",\n          \"description\": \"Parcels & mail\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2fcee959-4e8f-4fb1-acbf-f44186e0a1cc",
+          "name": "getServicesByServiceCodes",
+          "request": {
+            "name": "getServicesByServiceCodes",
+            "description": {
+              "content": "This endpoint returns an array of services based on a comma-delimited list of service codes supplied in the request. **Note: ** A list of all current service codes is available from the getServices endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "services",
+                ":service_codes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pc",
+                  "value": "<string>",
+                  "description": "A partner code identifies an entity that owns location data. Currently we offer access only to Australia Post outlet and services data. In the future we may expand this to include location data from partner providers. **Note:** If this field is left empty, the default value is \"AP\". Submitting any other value will return an empty data set."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "service_codes",
+                  "description": "(Required) A comma-delimited list of service codes by which to filter the returned list of matching locations."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f773bfa-acbb-4a32-a5f7-74b35ad22e74",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    ":service_codes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "service_codes",
+                      "description": "(Required) A comma-delimited list of service codes by which to filter the returned list of matching locations."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "AUTH-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"services\": [\n    {\n      \"service_code\": 3,\n      \"partner_code\": \"AP\",\n      \"name\": \"Special\",\n      \"description\": \"Open before 9.00am weekdays\",\n      \"appointment_required\": false,\n      \"searchable\": false,\n      \"url_name\": \"open-before-900am-weekdays\",\n      \"categories\": [\n        {\n          \"name\": \"opening_hours\",\n          \"description\": \"Opening hours\"\n        }\n      ]\n    },\n    {\n      \"service_code\": 6,\n      \"partner_code\": \"AP\",\n      \"name\": \"Boxes_Available\",\n      \"description\": \"PO Boxes available\",\n      \"appointment_required\": false,\n      \"searchable\": false,\n      \"url_name\": \"po-boxes-available\",\n      \"categories\": [\n        {\n          \"name\": \"parcels_mail\",\n          \"description\": \"Parcels & mail\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://digitalapi.auspost.com.au/delivery-partner",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "AUTH-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b0db7b7e-0c7d-4220-aa38-681388243d39",
+    "name": "Delivery Partner Endpoints API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This API allows Australia Post partners to submit delivery events to Australia Post.",
+      "type": "text/plain"
+    }
+  }
+}
