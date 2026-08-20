@@ -110,7 +110,8 @@ apis:
   description: The Endpoints API from Australia Post — 9 operation(s) for endpoints.
   humanURL: https://auspost.com.au/integrate-shipping-and-tracking-apis
   baseURL: https://digitalapi.auspost.com.au
-  tags:
+  tags: []
+  tags_raw:
   - Endpoints
   properties:
   - type: OpenAPI
