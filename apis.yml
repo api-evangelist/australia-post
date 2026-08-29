@@ -133,6 +133,9 @@ apis:
   - type: Documentation
     url: https://auspost.com.au/developers/openapi/partner/delivery-partner/1.3.0/overview/
 common:
+  - type: CapabilityMap
+    url: capabilities/australia-post-capability-edges.yml
+    name: Australia Post Business Capability Map
   - type: AgenticAccess
     url: agentic-access/australia-post-agentic-access.yml
   - type: VulnerabilityDisclosure

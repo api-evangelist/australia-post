@@ -1,0 +1,28 @@
+slug: australia-post
+provider: Australia Post
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Automotive & Mobility
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Endpoints
+  spec_file: australia-post-endpoints-api-openapi.yml
+  capability_id: BC-520.50
+  capability_id_l1: BC-520
+  capability_name: Logistics Operations Management
+  confidence: 0.7
+  evidence: POST /api/v1/event event Sends the delivery event to Australia Post; schemas DeliveryVO, ProofOfDeliveryVO,
+    ArticleVO
+  reason: Despite the generic tag 'Endpoints', the operations submit parcel delivery events with proof-of-delivery
+    and look up delivery points, work centres, facilities and service options — i.e. execution and visibility
+    of physical transport/delivery operations, which maps to Logistics Operations Management. Confidence
+    held at 0.7 because the tag also bundles location and service-code lookups that are closer to reference
+    data.
