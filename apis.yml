@@ -43,6 +43,19 @@ tags:
   - Delivery
   - E-Commerce
   - Labels
+  - Location
+  - Logistics
+  - Parcel Locker
+  - Postal
+  - Postage
+  - Shipping
+  - Tracking
+tags_raw:
+  - Address Validation
+  - Click and Collect
+  - Delivery
+  - E-Commerce
+  - Labels
   - Locations
   - Logistics
   - Parcel Locker
@@ -87,6 +100,11 @@ apis:
   humanURL: https://developers.auspost.com.au/apis/pac/
   baseURL: https://digitalapi.auspost.com.au
   tags:
+  - Postage
+  - Pricing
+  - E-Commerce
+  - Ratings
+  tags_raw:
   - Postage
   - Pricing
   - E-Commerce
