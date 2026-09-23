@@ -1,7 +1,8 @@
 {
   "provider": "australia-post",
   "sources": [
-    "australia-post-endpoints-api-openapi.yml"
+    "_original/delivery-partner-openapi.json",
+    "_original/locations-openapi.json"
   ],
   "outputs": [
     "australia-post-endpoints-api-openapi.yml"
@@ -9,6 +10,16 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "delivery-partner-openapi.json: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "delivery-partner-openapi.json: declared missing tag: Endpoints",
+    "locations-openapi.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "locations-openapi.json: declared missing tag: Endpoints",
+    "tag 'Endpoints' spans 2 source specs (delivery-partner-openapi.json, locations-openapi.json): per-path servers applied",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "australia-post-endpoints-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
