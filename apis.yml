@@ -50,6 +50,7 @@ tags:
   - Postage
   - Shipping
   - Tracking
+  - Australia
 tags_raw:
   - Address Validation
   - Click and Collect
@@ -63,6 +64,7 @@ tags_raw:
   - Postage
   - Shipping
   - Tracking
+  - Australia
 url: https://raw.githubusercontent.com/api-evangelist/australia-post/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
