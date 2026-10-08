@@ -154,6 +154,12 @@ apis:
   - type: Documentation
     url: https://auspost.com.au/developers/openapi/partner/delivery-partner/1.3.0/overview/
 common:
+  - type: Plans
+    url: plans/australia-post-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/australia-post-rate-limits.yml
+  - type: FinOps
+    url: finops/australia-post-finops.yml
   - type: CapabilityMap
     url: capabilities/australia-post-capability-edges.yml
     name: Australia Post Business Capability Map
