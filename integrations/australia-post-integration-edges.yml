@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/australia-post/integrations
+- https://n8n.io/integrations/australia-post/
+- https://composio.dev/toolkits/australia-post
+- https://monid.ai/tools/australia-post
+checked:
+- https://composio.dev/toolkits/australia-post
+- https://monid.ai/tools/australia-post
+- https://n8n.io/integrations/australia-post/
+- https://zapier.com/apps/australia-post/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
