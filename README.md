@@ -1,4 +1,4 @@
-# Australia Post (australia-post)
+# Australia Post
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,153 +66,197 @@
 
 Australia Post is Australia's primary postal operator, offering a developer platform with REST APIs for e-commerce merchants, logistics providers, and delivery partners. APIs cover shipping label creation, parcel tracking, postage calculation, parcel locker and post office location lookup, delivery choice and scheduling, and delivery partner event reporting for an integrated end-to-end fulfilment ecosystem.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/australia-post/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/australia-post/refs/heads/main/apis.yml)
+**Areas:** Address Validation · Click and Collect · Delivery · E-Commerce · Labels · Location · Logistics · Parcel Locker · Postal · Postage · Shipping · Tracking
 
-## Scope
+## Australia Post on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Australia Post is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/australia-post/](https://apis.io/providers/australia-post/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Address Validation
-- Click and Collect
-- Delivery
-- E-Commerce
-- Labels
-- Locations
-- Logistics
-- Parcel Locker
-- Postal
-- Postage
-- Shipping
-- Tracking
+- [Australia Post Shipping and Tracking API](https://apis.io/apis/australia-post/shipping-and-tracking/) — Enables eParcel and StarTrack contract customers to lodge orders, create and print shipping labels (including dangerous goods forms), generate order…
+- [Australia Post Postage Assessment Calculator API](https://apis.io/apis/australia-post/postage-assessment-calculator/) — Lets businesses and developers embed a postage calculator into websites or applications to retrieve standard retail postage rates for domestic and…
+- [Australia Post Delivery Choices API](https://apis.io/apis/australia-post/delivery-choices/) — Allows customers to select preferred delivery options at checkout, including delivery speed, delivery or collection location, and specific day, date, and…
+- [Australia Post Endpoints API](https://apis.io/apis/australia-post/australia-post-endpoints-api/) — The Endpoints API from Australia Post — 9 operation(s) for endpoints.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-06-13
-- **Modified:** 2026-06-13
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Australia Post Shipping and Tracking API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Enables eParcel and StarTrack contract customers to lodge orders, create and print shipping labels (including dangerous goods forms), generate order summaries, despatch parcels, estimate prices and international landed costs, and track parcel progress from source to destination through a single REST integration. Requires an active Australia Post or StarTrack billing account number; a sandbox test-bed environment is provided before going live.
+- [Australia Post Agentic Access](https://apis.io/agentic-access/australia-post/australia-post-agentic-access/)
 
-- **Human URL:** [https://auspost.com.au/integrate-shipping-and-tracking-apis](https://auspost.com.au/integrate-shipping-and-tracking-apis)
-- **Base URL:** `https://digitalapi.auspost.com.au`
+#### JSON Schema (39)
 
-#### Tags
+The data models the API reads and writes.
 
-- Shipping
-- Labels
-- Tracking
-- Logistics
-- E-Commerce
+- [ApiPostageResult](https://apis.io/schemas/australia-post/australia-post-api-postage-result/)
+- [ClassificationV3Item](https://apis.io/schemas/australia-post/australia-post-classification-v3-item/)
+- [CountryMetadataRequest](https://apis.io/schemas/australia-post/australia-post-country-metadata-request/)
+- [CountryMetadataResponse](https://apis.io/schemas/australia-post/australia-post-country-metadata-response/)
+- [DrcResponse](https://apis.io/schemas/australia-post/australia-post-drc-response/)
+- [EventVO](https://apis.io/schemas/australia-post/australia-post-event-vo/)
+- [LandedCostV3Request](https://apis.io/schemas/australia-post/australia-post-landed-cost-v3-request/)
+- [LandedCostV3Response](https://apis.io/schemas/australia-post/australia-post-landed-cost-v3-response/)
+- [LetterThicknessResult](https://apis.io/schemas/australia-post/australia-post-letter-thickness-result/)
+- [OperationalCapabilitiesResponse](https://apis.io/schemas/australia-post/australia-post-operational-capabilities-response/)
+- [PointsResponse](https://apis.io/schemas/australia-post/australia-post-points-response/)
+- [PresentationCatalogue](https://apis.io/schemas/australia-post/australia-post-presentation-catalogue/)
+- [PresentationData](https://apis.io/schemas/australia-post/australia-post-presentation-data/)
+- [ProhibitionsV3Response](https://apis.io/schemas/australia-post/australia-post-prohibitions-v3-response/)
+- [Services](https://apis.io/schemas/australia-post/australia-post-services/)
+- [SettlementReport](https://apis.io/schemas/australia-post/australia-post-settlement-report/)
+- [Transactions](https://apis.io/schemas/australia-post/australia-post-transactions/)
+- [WorkCentreByIdResponse](https://apis.io/schemas/australia-post/australia-post-work-centre-by-id-response/)
+- [WorkCentresResponse](https://apis.io/schemas/australia-post/australia-post-work-centres-response/)
+- [ArticleVO](https://apis.io/schemas/australia-post/delivery-partner-articlevo/)
+- [AttachmentVO](https://apis.io/schemas/australia-post/delivery-partner-attachmentvo/)
+- [AuditVO](https://apis.io/schemas/australia-post/delivery-partner-auditvo/)
+- [DeliveryVO](https://apis.io/schemas/australia-post/delivery-partner-deliveryvo/)
+- [EventOriginatorVO](https://apis.io/schemas/australia-post/delivery-partner-eventoriginatorvo/)
+- [EventVO](https://apis.io/schemas/australia-post/delivery-partner-eventvo/)
+- …and 14 more published on APIs.io
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://auspost.com.au/integrate-shipping-and-tracking-apis)
-- [Getting Started](https://auspost.com.au/developers/help-support/how-to-get-credentials/)
-- [API Reference](https://developers.auspost.com.au/apis/shipping-and-tracking/reference)
+Linked-data contexts for the provider's vocabulary.
 
-### Australia Post Postage Assessment Calculator API
+- [Australia Post Context](https://apis.io/jsonld/australia-post/australia-post-context/)
 
-Lets businesses and developers embed a postage calculator into websites or applications to retrieve standard retail postage rates for domestic and international parcels and letters. Accepts weight, dimensions, origin, and destination to return eligible services with pricing. Uses HTTP GET requests returning JSON or XML; authentication via AUTH-KEY header. Free API key available via self-serve registration. Note — this API returns retail rates only; contract rates require the Shipping and Tracking API.
+#### Examples (4)
 
-- **Human URL:** [https://developers.auspost.com.au/apis/pac/](https://developers.auspost.com.au/apis/pac/)
-- **Base URL:** `https://digitalapi.auspost.com.au`
+Example requests and responses.
 
-#### Tags
+- [Locations Multiple Points Returned Of Different Types](https://apis.io/examples/australia-post/locations-multiple-points-returned-of-different-types/)
+- [Locations Services Get 200 Example1](https://apis.io/examples/australia-post/locations-services-get-200-example1/)
+- [Locations Services_{Service_Codes} Get 200 Example1](https://apis.io/examples/australia-post/locations-services_{service_codes}-get-200-example1/)
+- [Locations Single Po Returned](https://apis.io/examples/australia-post/locations-single-po-returned/)
 
-- Postage
-- Pricing
-- E-Commerce
-- Rating
+#### Collections (1)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://developers.auspost.com.au/apis/pac/)
-- [API Reference](https://developers.auspost.com.au/apis/pac/reference)
-- [Getting Started](https://developers.auspost.com.au/apis/pacpcs-registration)
-- [A P I Explorer](https://developers.auspost.com.au/apis/pac/explorer)
+- [Delivery Partner Endpoints API](https://apis.io/collections/australia-post/open-australia-post-endpoints-api/)
 
-### Australia Post Locations API
+#### Overlays (6)
 
-Returns Australia Post outlet and facility information based on postcode or GPS coordinates, enabling applications to surface nearby post offices, parcel lockers, and parcel collect points to customers at checkout or on a store-finder map. Current version is 2.3.0. Available at no cost; API key obtained via the Developer Portal.
+OpenAPI overlays, including conversational phrasing for each operation.
 
-- **Human URL:** [https://auspost.com.au/developers/openapi/partner/locations/overview/](https://auspost.com.au/developers/openapi/partner/locations/overview/)
-- **Base URL:** `https://digitalapi.auspost.com.au/locations/v2`
+- [Australia Post Agency Data Delivery Overlay](https://apis.io/overlays/australia-post/australia-post-agency-data-delivery-overlay/)
+- [Australia Post Endpoints Api Overlay](https://apis.io/overlays/australia-post/australia-post-endpoints-api-overlay/)
+- [Australia Post International Export Tools V3 Overlay](https://apis.io/overlays/australia-post/australia-post-international-export-tools-v3-overlay/)
+- [Australia Post Locations V3 Overlay](https://apis.io/overlays/australia-post/australia-post-locations-v3-overlay/)
+- [Australia Post Mrso Dcl Info Overlay](https://apis.io/overlays/australia-post/australia-post-mrso-dcl-info-overlay/)
+- [Australia Post Postage Api Overlay](https://apis.io/overlays/australia-post/australia-post-postage-api-overlay/)
 
-#### Tags
+#### Governance rules (2)
 
-- Locations
-- Post Office
-- Parcel Locker
-- Click and Collect
+Spectral rulesets for the provider's contracts.
 
-#### Properties
+- [Australia Post — jsonschema rules](https://apis.io/rules/australia-post/australia-post-jsonschema-spectral-rules/)
+- [Australia Post API Rules](https://apis.io/rules/australia-post/australia-post-rules/)
 
-- [Documentation](https://auspost.com.au/developers/openapi/partner/locations/overview/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/australia-post/refs/heads/main/openapi/locations-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+#### Security (3)
 
-### Australia Post Delivery Choices API
+Authentication, trust centre, and vulnerability disclosure.
 
-Allows customers to select preferred delivery options at checkout, including delivery speed, delivery or collection location, and specific day, date, and time of delivery. Supports parcel locker delivery, authority to leave, nominated safe place, and click-and-collect at Australia Post outlets. Access requires meeting eParcel contract minimum volumes.
+- [Australia Post Authentication](https://apis.io/security/australia-post/australia-post-authentication/)
+- [Australia Post Domain Security](https://apis.io/security/australia-post/australia-post-domain-security/)
+- [Australia Post Vulnerability Disclosure](https://apis.io/security/australia-post/australia-post-vulnerability-disclosure/)
 
-- **Human URL:** [https://developers.auspost.com.au/apis/dce/](https://developers.auspost.com.au/apis/dce/)
-- **Base URL:** `https://digitalapi.auspost.com.au`
+#### OAuth scopes (1)
 
-#### Tags
+The permissions the API asks for.
 
-- Delivery
-- Click and Collect
-- Parcel Locker
-- E-Commerce
-- Checkout
+- [Australia Post Scopes](https://apis.io/scopes/australia-post/australia-post-scopes/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [Documentation](https://developers.auspost.com.au/apis/dce/)
+Published plans, tiers and prices.
 
-### Australia Post Delivery Partner API
+- [Australia Post Plans Pricing](https://apis.io/plans/australia-post/australia-post-plans-pricing/)
 
-Enables authorised Australia Post delivery network partners to report delivery events back to Australia Post systems in near real-time. Partners push scan events and delivery outcomes via POST requests to a single endpoint; the data feeds Australia Post's consumer tracking and operational reporting. Current version is 1.3.0; OpenAPI definition available for client code generation.
+#### Rate limits (1)
 
-- **Human URL:** [https://auspost.com.au/developers/openapi/partner/delivery-partner/1.3.0/overview/](https://auspost.com.au/developers/openapi/partner/delivery-partner/1.3.0/overview/)
-- **Base URL:** `https://digitalapi.auspost.com.au/delivery-partner`
+Published request limits.
 
-#### Tags
+- [Australia Post Rate Limits](https://apis.io/rate-limits/australia-post/australia-post-rate-limits/)
 
-- Delivery
-- Logistics
-- Tracking
-- Partners
+#### FinOps (1)
 
-#### Properties
+What the API costs to run, by operation.
 
-- [Documentation](https://auspost.com.au/developers/openapi/partner/delivery-partner/1.3.0/overview/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/australia-post/refs/heads/main/openapi/delivery-partner-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Australia Post Finops](https://apis.io/finops/australia-post/australia-post-finops/)
 
-## Common Properties
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://auspost.com.au/)
-- [Developer Portal](https://auspost.com.au/developers/)
-- [Developer Portal](https://developers.auspost.com.au/)
 - [Documentation](https://auspost.com.au/developers/help-support/about-our-apis/)
-- [Getting Started](https://auspost.com.au/developers/help-support/how-to-get-credentials/)
-- [Catalog](https://auspost.com.au/developers/api-documentations/)
-- [Sign Up](https://developers.auspost.com.au/apis/pacpcs-registration)
-- [Login](https://developers.auspost.com.au/)
-- [Status Page](https://status.developers.auspost.com.au/)
-- [Terms of Service](https://auspost.com.au/developers/help-support/)
-- [Contact](mailto:customer_connectivity@auspost.com.au)
-- [Integrate Page](https://auspost.com.au/integrate-shipping-and-tracking-apis)
-- [LinkedIn](https://www.linkedin.com/company/australia-post)
-- [Features](undefined)
+- [Getting started](https://auspost.com.au/developers/help-support/how-to-get-credentials/)
+- [API reference](https://developers.auspost.com.au/docs/reference)
+- [Pricing](https://auspost.com.au/disruptions-and-updates/pricing-updates)
+- [Support](https://auspost.com.au/help)
+- [Blog](https://auspost.com.au/business/grow-your-business/business-ideas-blog)
+- [Security](https://auspost.com.au/about-us/about-our-site/responsible-disclosure)
+- [Terms of service](https://auspost.com.au/content/dam/auspost_corp/media/documents/api-licence-terms-of-use.pdf)
+- [Privacy policy](https://auspost.com.au/privacy)
+- [GitHub](https://github.com/auspost)
+- [Status](https://status.developers.auspost.com.au/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 58.4** — strong · rubric 0.24.0 · scored 2026-10-21
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 60.1 |
+| Contract governance | 43.6 |
+| Operational transparency | 60.5 |
+| Developer ergonomics | 63.6 |
+| Access clarity | 36.8 |
+
+**Agent readiness 36.6** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | unknown |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/australia-post/](https://apis.io/providers/australia-post/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Australia Post: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/australia-post/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
